@@ -29,6 +29,11 @@ const Search: FC = () => {
         setbadConcatText(theRub);
       };
 
+      // Reset Input Field handler
+        const resetInputField = () => {
+            setSearchInputText("");
+        };
+
     const {
       data,
       slouchyA,
@@ -50,6 +55,8 @@ const Search: FC = () => {
       <p>You entered :{searchInputText}</p>
       <button onClick={handleOnSearch}>Search</button>
       <button onClick={handleOnSearchTwo}>Search Two</button>
+      <button onClick={resetInputField}>CLEAR</button>
+
       <p>Click button 'Search Two' and ill make one bad concat: {badConcatText}</p>
     </div>
   );
