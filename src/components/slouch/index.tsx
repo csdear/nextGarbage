@@ -12,9 +12,9 @@ export default function getSlouchy() {
         slouchyA: JSON.stringify(results[2]),
         slouchyB: "tacos!",
         slouchyFireA(
-            a,
-            b,
-            c,
+            a: string,
+            b: number,
+            c: boolean,
         ) {
             console.log(`slouchy fire A, REC: ${a}, ${b}, ${c}`);
         },
