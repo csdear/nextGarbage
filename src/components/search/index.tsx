@@ -60,7 +60,7 @@ const Search: FC = () => {
       slouchyB,
       slouchyFireA,
       slouchyFireB,
-  } = getSlouchy();
+  } = getSlouchy(); //mock a utility/helper or custom hook.
 
   return (
     <div>
