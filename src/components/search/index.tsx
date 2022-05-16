@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import getSlouchy from "../slouch";
 import styled from 'styled-components';
+import { calculator, FireTimesTen } from "../../utils/calc";
 
 
 // Styling a regular HTML input via styled-components
@@ -16,6 +17,9 @@ const Search: FC = () => {
     const personId = 42;
     const loveTacos = true;
 
+    // const [calculatorInputText1, setCalculatorInputText1] = useState<number>(0);
+    // const [calculatorInputText2, setCalculatorInputText2] = useState<number>(0);
+
 
 
     const [dataOptions] = useState([
@@ -29,8 +33,6 @@ const Search: FC = () => {
 
     //   const [dataOptions] = useState([1, 2, 3, 4]);
       const [selected, setSelected] = useState("");
-
-
 
     const handleOnSearch = () => {
         // just call the  helper function... no return
@@ -53,7 +55,7 @@ const Search: FC = () => {
 
 
 
-
+// Playing with util functions
     const {
       data,
       slouchyA,
@@ -61,6 +63,23 @@ const Search: FC = () => {
       slouchyFireA,
       slouchyFireB,
   } = getSlouchy(); //mock a utility/helper or custom hook.
+
+  // a returning calc util function
+  const {
+    add,
+    sub,
+    mul,
+    div,
+  } = calculator;
+
+  const num1 = 100;
+  const num2 = 125;
+
+  const result = add(num1,num2);
+  console.log(result);
+
+  // a voidoid non value returning util function.
+  FireTimesTen(5);
 
   return (
     <div>
@@ -96,9 +115,6 @@ const Search: FC = () => {
         </select>
         <br />
         <button onClick={() => setSelected("")}>CLEAR DropDown</button>
-
-
-
 
 
     </div>
