@@ -1,5 +1,6 @@
 import { FC } from "react";
 import styles from "./bare-bones.module.scss";
+import Layout from "../layout-component";
 
 const BareBones: FC = () => {
 
@@ -11,6 +12,7 @@ return (
             className={styles["big-root-class__input"]}
             data-testid={"big-root-class__input"}
         />
+        <Layout condition/>
 
     </div>
     </div>
