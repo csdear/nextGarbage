@@ -1,0 +1,19 @@
+.alert {
+    &__container {
+      background-color: lightgreen;
+      width: 40%;
+      border-radius: 15px;
+      padding: 2px 16px;
+      margin-top: 10px;
+
+      &:hover {
+        -webkit-box-shadow: 10px 5px 20px 6px #C970FF;
+        box-shadow: 10px 5px 20px 6px #C970FF;
+      }
+    }
+    &__input {
+      display: block;
+      margin: 20px 0px;
+      border: 3px solid lightblue;
+    }
+  }

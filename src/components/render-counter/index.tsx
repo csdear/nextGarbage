@@ -7,7 +7,7 @@ import { FC, useEffect, useRef, useState } from "react";
 // Unlike updating the state, mutating the reference, does not trigger a re-render.
 // https://medium.com/@dev_one/how-to-use-the-useref-hook-dc8845350478
 const RenderCounter: FC = () => {
-  const [userInput, setUserInput] = useState<string>("");
+  const [userInput, setUserInput] = useState<string>('');
   // dont do this, this would cause an  infinite loop
     // const [renders, setRenders] = useState(0);
 
