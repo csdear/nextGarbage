@@ -1,54 +1,53 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState, useEffect } from 'react';
 
-import Hello from "../src/components/hello";
-import RenderCounter from "../src/components/render-counter";
-import Search from "../src/components/search";
-import BareBones from "../src/components/bare-bones"
-import Alert from "../src/components/alert"
+import Hello from '../src/components/hello';
+import RenderCounter from '../src/components/render-counter';
+import Search from '../src/components/search';
+import BareBones from '../src/components/bare-bones';
+import Alert from '../src/components/alert';
 
 const Index: FC = () => {
+  const [userInput, setUserInput] = useState<string>('');
+  // const [isError, setIsError] = useState<boolean>(true); // hell, showError is enough for this simple demo.
+  const [showError, setShowError] = useState<boolean>(true);
 
-const [userInput, setUserInput] = useState<string>("");
-// const [isError, setIsError] = useState<boolean>(true); // hell, showError is enough for this simple demo.
-const [showError, setShowError] = useState<boolean>(true);
-
-useEffect(() => {
+  useEffect(() => {
     if (userInput) {
-        console.log('we got input');
-        setShowError(false);
-        // setIsError(false);
+      console.log('we got input');
+      setShowError(false);
+      // setIsError(false);
     } else {
-        setShowError(true);
-        // setIsError(true);
+      setShowError(true);
+      // setIsError(true);
     }
-},[userInput])
+  }, [userInput]);
 
-const handleInputChange = (input) => {
+  const handleInputChange = input => {
     console.log('handling change to input :', input);
     setUserInput(input);
 
     // setIsError(false);
-}
+  };
 
-return (
-<div>
-    <h1>Garbage.</h1>
-    <Hello />
-    <RenderCounter/>
-    <Search/>
-    <BareBones/>
-    { showError && ( <Alert />) }
+  return (
+    <div>
+      <h1>Garbage.</h1>
+      <Hello />
+      <RenderCounter />
+      <Search />
+      <BareBones />
+      {showError && <Alert />}
 
-    <input
+      <input
         // className={styles["alert__input"]}
         // placeholder="Enter here to dismiss alert"
-        data-testid={"alert__input"}
-        onChange={(e) => handleInputChange(e.target.value)}
+        data-testid={'alert__input'}
+        onChange={e => handleInputChange(e.target.value)}
         value={userInput}
-    />
-    <h3>{userInput}</h3>
-</div>
-);
+      />
+      <h3>{userInput}</h3>
+    </div>
+  );
 };
 
 export default Index;

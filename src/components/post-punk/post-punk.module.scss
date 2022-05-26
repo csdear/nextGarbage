@@ -1,0 +1,26 @@
+
+.big-root-class {
+    &__someSubDiv {
+
+        width: 40%;
+        border-radius: 15px;
+        padding: 2px 16px;
+        margin-top: 10px;
+
+        // vegas omega css generator text shadow generator....
+        color: #FFFFFF;
+        background: #333333;
+        text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+
+        &:hover {
+            -webkit-box-shadow: 10px 5px 20px 6px #C970FF;
+            box-shadow: 10px 5px 20px 6px #C970FF;
+          }
+
+    }
+    &__input {
+      display: block;
+      margin: 20px 0px;
+      border: 5px solid lightblue;
+    }
+  }
