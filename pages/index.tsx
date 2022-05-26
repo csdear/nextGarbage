@@ -13,14 +13,7 @@ const Index: FC = () => {
   const [showError, setShowError] = useState<boolean>(true);
 
   useEffect(() => {
-    if (userInput) {
-      console.log('we got input');
-      setShowError(false);
-      // setIsError(false);
-    } else {
-      setShowError(true);
-      // setIsError(true);
-    }
+    userInput ? setShowError(false) : setShowError(true);
   }, [userInput]);
 
   const handleInputChange = input => {
