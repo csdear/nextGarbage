@@ -5,6 +5,7 @@ import RenderCounter from '../src/components/render-counter';
 import Search from '../src/components/search';
 import BareBones from '../src/components/bare-bones';
 import Alert from '../src/components/alert';
+import PostPunk from '../src/components/post-punk';
 
 const Index: FC = () => {
   const [userInput, setUserInput] = useState<string>('');
@@ -46,6 +47,9 @@ const Index: FC = () => {
         value={userInput}
       />
       <h3>{userInput}</h3>
+      <PostPunk title="Cool World">
+        <small> ~This~ Data from HoC as Children...</small>
+      </PostPunk>
     </div>
   );
 };
