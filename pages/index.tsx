@@ -6,6 +6,7 @@ import Search from '../src/components/search';
 import BareBones from '../src/components/bare-bones';
 import Alert from '../src/components/alert';
 import PostPunk from '../src/components/post-punk';
+import PicoPost from '../src/components/post-pico';
 
 const Index: FC = () => {
   const [userInput, setUserInput] = useState<string>('');
@@ -43,6 +44,14 @@ const Index: FC = () => {
       <PostPunk title="Cool World">
         <small> ~This~ Data from HoC as Children...</small>
       </PostPunk>
+      <PicoPost heading="PicoPost">
+        {/* typescript error so had to wrap this in a DIV to it to work. Eg "This JSX tag's 'children' prop expects a single child of type 'Element', but multiple children were provided." */}
+        <div>
+          <p>Children and Styling Best Practice Demo.</p>
+          <p>We are passed in </p>
+          <p>As Children</p>
+        </div>
+      </PicoPost>
     </div>
   );
 };

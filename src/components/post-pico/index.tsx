@@ -10,14 +10,15 @@ interface Props {
 }
 
 const PicoPostMain = ({ content }) => {
-  return <div className="post__main">{content}</div>;
+  return <div className={styles['post__main']}>{content}</div>;
 };
 
 const PicoPost: FC<Props> = ({ heading, children }) => {
   return (
     <section>
-      <div className="post">
-        <h1 className="post__heading">{heading}</h1>
+      <div className={styles['post']}>
+        {/* {styles["big-root-class__input"]} */}
+        <h1 className={styles['post__heading']}>{heading}</h1>
         <PicoPostMain content={children} />
       </div>
       <a>See all posts</a>

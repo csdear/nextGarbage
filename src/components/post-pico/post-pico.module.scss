@@ -1,0 +1,26 @@
+.post {
+  background-color: rgb(202, 143, 236);
+  width: 40%;
+  border-radius: 15px;
+  padding: 2px 16px;
+  margin-top: 10px;
+
+  &__heading {
+    //margin: 4%;
+    background-color: rgb(112, 68, 233);
+    width: 40%;
+    border-radius: 15px;
+    padding: 2px 16px;
+    margin-top: 10px;
+  }
+
+  &__main {
+    // basic container
+    background-color: rgb(29, 33, 238);
+    color: white;
+    width: 40%;
+    border-radius: 15px;
+    padding: 2px 16px;
+    margin-top: 10px;
+  }
+}
