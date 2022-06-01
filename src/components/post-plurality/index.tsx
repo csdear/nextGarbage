@@ -2,7 +2,7 @@
 
 // import React from 'react';
 import { FC } from 'react';
-import styles from './plurality-punk.module.scss';
+import styles from './post-plurality.module.scss';
 
 interface Props {
   heading: string;
@@ -10,31 +10,31 @@ interface Props {
 }
 
 const PostIntro = ({ children }) => {
-  return <div className="post__intro">{children}</div>;
+  return <div className={styles['post__intro']}>{children}</div>;
 };
 
 const PostMain = ({ children }) => {
-  return <div className="post__main">{children}</div>;
+  return <div className={styles['post__main']}>{children}</div>;
 };
 
 const PostOutro = ({ children }) => {
   return (
-    <div className="post__outro">
+    <div className={styles['post__outro']}>
       {children}
       <a>See all posts</a>
     </div>
   );
 };
 
-const Post: FC<Props> = ({ heading, children }) => {
+const PluralityPost: FC<Props> = ({ heading, children }) => {
   return (
     <section>
-      <div className="post">
-        <h1 className="post__heading">{heading}</h1>
+      <div className={styles['post']}>
+        <h1 className={styles['post__heading']}>{heading}</h1>
         {children}
       </div>
     </section>
   );
 };
 
-export { PostIntro, PostMain, PostOutro, Post };
+export { PostIntro, PostMain, PostOutro, PluralityPost };

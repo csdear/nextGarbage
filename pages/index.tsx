@@ -7,6 +7,12 @@ import BareBones from '../src/components/bare-bones';
 import Alert from '../src/components/alert';
 import PostPunk from '../src/components/post-punk';
 import PicoPost from '../src/components/post-pico';
+import {
+  PluralityPost,
+  PostIntro,
+  PostMain,
+  PostOutro,
+} from '../src/components/post-plurality';
 
 const Index: FC = () => {
   const [userInput, setUserInput] = useState<string>('');
@@ -52,6 +58,34 @@ const Index: FC = () => {
           <p>As Children</p>
         </div>
       </PicoPost>
+      <PluralityPost heading="The Plurality Post">
+        {/* data within postIntro, PostMain, and PostOutro to be consumed 
+        as children, then each styled accordingly in the PluralityPost definition */}
+        <div>
+          <PostIntro>
+            <p>
+              Pellentesque habitant morbi tristique senectus et netus
+              et malesuada fames ac turpis egestas.
+            </p>
+          </PostIntro>
+          <PostMain>
+            <ul>
+              <li>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing
+                elit.
+              </li>
+              <li>Aliquam tincidunt mauris eu risus.</li>
+              <li>Vestibulum auctor dapibus neque.</li>
+            </ul>
+          </PostMain>
+          <PostOutro>
+            <p>
+              Tristique senectus et netus et malesuada fames ac turpis
+              egestas.
+            </p>
+          </PostOutro>
+        </div>
+      </PluralityPost>
     </div>
   );
 };
