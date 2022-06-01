@@ -13,6 +13,7 @@ import {
   PostMain,
   PostOutro,
 } from '../src/components/post-plurality';
+import Bar from '../src/components/bar';
 
 const Index: FC = () => {
   const [userInput, setUserInput] = useState<string>('');
@@ -59,7 +60,7 @@ const Index: FC = () => {
         </div>
       </PicoPost>
       <PluralityPost heading="The Plurality Post">
-        {/* data within postIntro, PostMain, and PostOutro to be consumed 
+        {/* data within postIntro, PostMain, and PostOutro to be consumed
         as children, then each styled accordingly in the PluralityPost definition */}
         <div>
           <PostIntro>
@@ -86,6 +87,7 @@ const Index: FC = () => {
           </PostOutro>
         </div>
       </PluralityPost>
+      <Bar />
     </div>
   );
 };

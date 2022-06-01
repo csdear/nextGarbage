@@ -1,0 +1,50 @@
+// eg BEM and  SASS, SASS AND BEM
+
+//variables
+$color-red: #FF0000;
+$color-gray: #CCCCCC;
+$color-black: #111111;
+$spacing: 5px;
+
+//nesting
+.bar {  // main BLOCK
+	width: 40%;
+    border: 1px solid $color-gray; // variable use
+    display: flex;  // USED FOR CENTERING HORIZONTALLY
+    justify-content: center;
+
+	&__list {  // ELEMENT
+		padding: 0 3 * $spacing; //operation including variable
+	}
+
+	&__item {
+		list-style: none;
+		background-color: $color-gray;
+		margin-bottom: $spacing;
+		padding: 2 * $spacing;
+	}
+
+	&__logo {
+		// display: none;
+
+        padding: .5rem;
+        // flex-flow:column wrap; //USE FOR MAKING ELEMENTS STACK ON TOP OF EACHOTHER, NEXT LINE...CLOUD ICON ON TOP OF TEXT
+
+        align-items: center;  // USED  FOR CENTERING VERTICALLY.
+        border-radius: 20px/20px;
+        border: #4e97b2 dashed 1px;
+        // margin-left: 20px;
+        /* background-color: lightblue; */
+        height: 200px;
+        width: 200px;
+	}
+}
+
+.link {
+	text-decoration: none;
+    color: $color-red;
+    // A MODIFIER
+    &--highlight {
+        font-weight: bold;
+    }
+}
