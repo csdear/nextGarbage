@@ -14,6 +14,7 @@ import {
   PostOutro,
 } from '../src/components/post-plurality';
 import Bar from '../src/components/bar';
+import CountUp from '../src/components/count-up';
 
 const Index: FC = () => {
   const [userInput, setUserInput] = useState<string>('');
@@ -88,6 +89,7 @@ const Index: FC = () => {
         </div>
       </PluralityPost>
       <Bar />
+      <CountUp title="A Counter" initialCount={0} />
     </div>
   );
 };
