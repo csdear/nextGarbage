@@ -16,11 +16,14 @@ import {
 } from '../src/components/post-plurality';
 import Bar from '../src/components/bar';
 import CountUp from '../src/components/count-up';
+import LoadThemDatas from '../src/components/load-them-datas';
 
 const Index: FC = () => {
   const [userInput, setUserInput] = useState<string>('');
   // const [isError, setIsError] = useState<boolean>(true); // hell, showError is enough for this simple demo.
   const [showError, setShowError] = useState<boolean>(true);
+
+  const userName = "csdear";
 
   useEffect(() => {
     userInput ? setShowError(false) : setShowError(true);
@@ -92,6 +95,7 @@ const Index: FC = () => {
       <Bar />
       <CountUp title="A Counter" initialCount={0} />
       <BareBonesProps title="FC+TS With Props" />
+      <LoadThemDatas inputSearch={userName} />
     </div>
   );
 };
