@@ -12,7 +12,8 @@ return (
             className={styles["big-root-class__input"]}
             data-testid={"big-root-class__input"}
         />
-        <Layout condition/>
+        <Layout condition/>{/* ~truthy, Renders Layout component with Options A */}
+        {/*<Layout /> ~falsy, Renders Layout component with Options A */}
 
     </div>
     </div>

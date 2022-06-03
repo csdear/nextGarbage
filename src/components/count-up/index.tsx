@@ -4,7 +4,8 @@ interface CountUpProps {
     title: string;
     initialCount: number;
 }
-
+// Above the component : imports, inferfaces, types, mini parts for children styling (see PicoPostMain)
+// Within the component: use* Hooks, functions
 const CountUp: FC<CountUpProps> = ({ title, initialCount,  }) => { // for props, dont forget the curlies! Or many red herring  errors occurs downstream.
   //init state at count prop passed  in or zero.
   const [count, setCount] = useState<number>(initialCount || 0);

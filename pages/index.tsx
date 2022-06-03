@@ -4,6 +4,7 @@ import Hello from '../src/components/hello';
 import RenderCounter from '../src/components/render-counter';
 import Search from '../src/components/search';
 import BareBones from '../src/components/bare-bones';
+import BareBonesProps from '../src/components/bare-bones-props';
 import Alert from '../src/components/alert';
 import PostPunk from '../src/components/post-punk';
 import PicoPost from '../src/components/post-pico';
@@ -90,6 +91,7 @@ const Index: FC = () => {
       </PluralityPost>
       <Bar />
       <CountUp title="A Counter" initialCount={0} />
+      <BareBonesProps title="FC+TS With Props" />
     </div>
   );
 };
