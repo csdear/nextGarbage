@@ -96,6 +96,7 @@ const Index: FC = () => {
       <CountUp title="A Counter" initialCount={0} />
       <BareBonesProps title="FC+TS With Props" />
       <LoadThemDatas inputSearch={userName} />
+      {/* <LoadThemDatas /> */}
     </div>
   );
 };
