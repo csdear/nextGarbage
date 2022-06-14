@@ -1,5 +1,5 @@
 import { FC, useState, useEffect } from 'react';
-
+import Link from 'next/link';
 import Hello from '../src/components/hello';
 import RenderCounter from '../src/components/render-counter';
 import Search from '../src/components/search';
@@ -23,7 +23,7 @@ const Index: FC = () => {
   // const [isError, setIsError] = useState<boolean>(true); // hell, showError is enough for this simple demo.
   const [showError, setShowError] = useState<boolean>(true);
 
-  const userName = "csdear";
+  const userName = 'csdear';
 
   useEffect(() => {
     userInput ? setShowError(false) : setShowError(true);
@@ -39,6 +39,9 @@ const Index: FC = () => {
   return (
     <div>
       <h1>Garbage.</h1>
+      <Link href="/grid-forged">
+        <a>Grid Forged</a>
+      </Link>
       <Hello />
       <RenderCounter />
       <Search />
