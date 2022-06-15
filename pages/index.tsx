@@ -17,6 +17,7 @@ import {
 import Bar from '../src/components/bar';
 import CountUp from '../src/components/count-up';
 import LoadThemDatas from '../src/components/load-them-datas';
+import BlondeGirl from '../src/components/blonde-girl';
 
 const Index: FC = () => {
   const [userInput, setUserInput] = useState<string>('');
@@ -97,6 +98,7 @@ const Index: FC = () => {
       <BareBonesProps title="FC+TS With Props" />
       <LoadThemDatas inputSearch={userName} />
       {/* <LoadThemDatas /> */}
+      <BlondeGirl name="Stacy" id={123}/>
     </div>
   );
 };
