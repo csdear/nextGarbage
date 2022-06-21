@@ -1,5 +1,6 @@
 import React, { FC, ReactElement } from 'react';
-import styles from "./blonde-girl.module.scss";
+import styles from "./image-list.module.scss";
+import { IImage } from "../../types"
 
 //prop passed in will be something like  .....
 // const photos = [{"fileName":"planes.jpeg","description":"A-10 warthog","featured":true,"id":"001"},
@@ -14,18 +15,36 @@ import styles from "./blonde-girl.module.scss";
 // to give you ts errors, 'string' only refers to a type, but is being used as a value here.
 // Also might be useful when styling images with flexbox :  https://www.developerdrive.com/responsive-image-gallery-flexbox/
 
-interface Image {
-    fileName: string,
-    description: string,
-    featured: boolean,
-    id: number,
+//1. main props
+interface ImageListProps {
+    images: IImage[];
 }
 
-const ImageList: FC<Image> = ({fileName, description, featured, id}): ReactElement => {
+//2. item props
+interface ImageListItemProps {
+    image: IImage;
+}
+
+//3. Sub-internal-component for Item
+// - uses interface ImageListItemProps
+const ImageListItem: FC<ImageListItemProps> = ({ image }) => {
+    return (
+        <img src={image.url} alt={image.description}></img>
+    );
+}
+
+
+//4. Main ImageList component hosting the items
+// ReactElement needed?
+const ImageList: FC<ImageListProps> = ({ images }): ReactElement => {
     return (
     <div className={styles["image-list"]}>
         <div className={styles["image-list__content"]} data-testid={"image-list__content"}>
             {/* MAP OUT IMAGES HERE */}
+            <h1>Typescript Image list</h1>
+            {images.map((image, index) => (
+                <ImageListItem key={index} image={image} />
+            ))}
         </div>
     </div>
     )

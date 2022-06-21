@@ -18,6 +18,7 @@ import Bar from '../src/components/bar';
 import CountUp from '../src/components/count-up';
 import LoadThemDatas from '../src/components/load-them-datas';
 import BlondeGirl from '../src/components/blonde-girl';
+import ImageList from '../src/components/image-list';
 
 const Index: FC = () => {
   const [userInput, setUserInput] = useState<string>('');
@@ -25,6 +26,10 @@ const Index: FC = () => {
   const [showError, setShowError] = useState<boolean>(true);
 
   const userName = 'csdear';
+  //prop passed in will be something like  .....
+  const imageData = [{"url":"https://i.imgur.com/WiVhNzA.png","description":"A-10 warthog","featured":true,"id":"001"},
+  {"url":"https://i.imgur.com/V86wcMO.png","description":"Steam Engine","featured":false,"id":"002"},
+  {"url":"https://i.imgur.com/6i6VCLD.png","description":"Corvette Stingray","featured":false,"id":"003"}];
 
   useEffect(() => {
     userInput ? setShowError(false) : setShowError(true);
@@ -102,6 +107,7 @@ const Index: FC = () => {
       <LoadThemDatas inputSearch={userName} />
       {/* <LoadThemDatas /> */}
       <BlondeGirl name="Stacy" id={123}/>
+      <ImageList images={imageData} />
     </div>
   );
 };
