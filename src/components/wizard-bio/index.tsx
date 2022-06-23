@@ -3,7 +3,8 @@ import styles from './wizard-bio.module.scss';
 
 interface WizardBioProps {
     name: string,
-    age: number
+    age: number,
+    children: JSX.Element
 }
 
 interface WizardImageProps {
@@ -17,10 +18,11 @@ const WizardImage: FC<WizardImageProps> = ({ url }) => {
 }
 
 
-const WizardBio: FC<WizardBioProps> = ({ name, age }) => {
+const WizardBio: FC<WizardBioProps> = ({ name, age, children }) => {
     return (
         <div className={styles['wizard-bio']}>
             <div className={styles['wizard-bio__content']}>
+                <h1>{children}</h1>
                 <p>Hello {name} </p>
                 <p>Age : {age} </p>
                 <WizardImage url="cool"/>
