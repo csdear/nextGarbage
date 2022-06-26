@@ -29,8 +29,12 @@ interface ImageListItemProps {
 // - uses interface ImageListItemProps
 const ImageListItem: FC<ImageListItemProps> = ({ image }) => {
     return (
+        <div>
         <img src={image.url} alt={image.description}></img>
-    );
+        <h1>{image.id}</h1>
+        {image.featured && (<p>Featured!</p>) }
+        </div>
+    );  
 }
 
 
