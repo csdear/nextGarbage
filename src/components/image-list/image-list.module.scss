@@ -1,31 +1,43 @@
-
 .image-list {
 
-    
-    
-    &__content {
+  
+  //ALT: width: 100%;
+  border-radius: 15px;
+  padding: 2px 16px;
+  margin-top: 10px;
 
-        display:flex;
+  // vegas omega css generator text shadow generator....
+  color: #FFFFFF;
+  background: #333333;
+  text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+
+  &__container {
+    // flex container
+        display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        row-gap: 2rem;
+        column-gap: 2rem;
 
-        // width: 100%;
-        border-radius: 15px;
-        padding: 2px 16px;
-        margin-top: 10px;
+  }
 
-        // vegas omega css generator text shadow generator....
-        color: #FFFFFF;
-        background: #333333;
-        text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+  &__items {
+    // flex items 
+    // flex-basis: auto;
+    // flex-grow: 5; 
 
-        
+  }
 
-        &:hover {
-            -webkit-box-shadow: 10px 5px 20px 6px #C970FF;
-            box-shadow: 10px 5px 20px 6px #C970FF;
-          }
 
+  &:hover {
+      -webkit-box-shadow: 10px 5px 20px 6px #C970FF;
+      box-shadow: 10px 5px 20px 6px #C970FF;
     }
+
+
     &__input {
       display: block;
       margin: 20px 0px;

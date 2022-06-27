@@ -29,7 +29,7 @@ interface ImageListItemProps {
 // - uses interface ImageListItemProps
 const ImageListItem: FC<ImageListItemProps> = ({ image }) => {
     return (
-        <div>
+        <div className={styles["image-list__items"]} data-testid={"image-list__items"}>
         <img src={image.url} alt={image.description}></img>
         <h1>{image.id}</h1>
         {image.featured && (<p>Featured!</p>) }
@@ -43,9 +43,9 @@ const ImageListItem: FC<ImageListItemProps> = ({ image }) => {
 const ImageList: FC<ImageListProps> = ({ images }): ReactElement => {
     return (
     <div className={styles["image-list"]}>
-        <div className={styles["image-list__content"]} data-testid={"image-list__content"}>
+        <h1>Typescript Image list</h1>
+        <div className={styles["image-list__container"]} data-testid={"image-list__container"}>
             {/* MAP OUT IMAGES HERE */}
-            <h1>Typescript Image list</h1>
             {images.map((image, index) => (
                 <ImageListItem key={index} image={image} />
             ))}
