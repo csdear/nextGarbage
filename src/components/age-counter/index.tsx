@@ -30,7 +30,7 @@ const AgeCounter: FC<AgeCounterProps> = ({ initAge }) => {
             firstRender.current = false;
             return;
         }
-
+        /*
         if ( age === 0) {
             setAgeMessage('You are a twinkle in your daddy\'s eye');
         }
@@ -42,8 +42,35 @@ const AgeCounter: FC<AgeCounterProps> = ({ initAge }) => {
        if ( age >= 13 && age <= 19) {
         setAgeMessage('You are a Teen');
        }
+       */
+       //exp
+       // The value we'll be evaluating:
+        
 
-       // ds
+        // Matches for any case where the expression === `true`:
+        switch (true) {
+            case age === 0:
+                setAgeMessage('You are a twinkle in your daddy\'s eye');
+                break;
+            case age >= 1 && age <= 12:
+                setAgeMessage('You are a Child');
+                break;
+            case age >= 13 && age <= 19:
+                setAgeMessage('You are a Teen');
+                break;
+            case age >= 20 && age <= 24:
+                setAgeMessage('You are a Young Adult');
+                break;
+            case age >= 25 && age <= 64:
+                setAgeMessage('You are an Adult');
+                break;
+            case age >= 65:
+                setAgeMessage('You are a Senior Citizen');
+                break;
+            default:
+                break;
+        }
+       // exp
         if (age >= 1 ) {
             setIncrementDisabled(false);
         }
@@ -67,6 +94,7 @@ const AgeCounter: FC<AgeCounterProps> = ({ initAge }) => {
         if (age >= 100) {
             setAgeError('Age greater than 100 not allowed');
             setIncrementDisabled(true);
+            setAgeMessage(null);
             return true;
         }
         else {
