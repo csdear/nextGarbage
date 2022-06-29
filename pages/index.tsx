@@ -19,6 +19,8 @@ import CountUp from '../src/components/count-up';
 import LoadThemDatas from '../src/components/load-them-datas';
 import BlondeGirl from '../src/components/blonde-girl';
 import ImageList from '../src/components/image-list';
+import WizardBio from '../src/components/wizard-bio';
+import AgeCounter from '../src/components/age-counter';
 
 const Index: FC = () => {
   const [userInput, setUserInput] = useState<string>('');
@@ -108,6 +110,11 @@ const Index: FC = () => {
       {/* <LoadThemDatas /> */}
       <BlondeGirl name="Stacy" id={123}/>
       <ImageList images={imageData} />
+      <WizardBio name='Elmonster' age={42}>
+        <div><h1>Wizard Bio</h1></div>
+      </WizardBio>
+      <br />
+      <AgeCounter initAge={5} />
     </div>
   );
 };
