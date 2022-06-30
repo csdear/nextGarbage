@@ -30,21 +30,6 @@ const AgeCounter: FC<AgeCounterProps> = ({ initAge }) => {
             firstRender.current = false;
             return;
         }
-        /*
-        if ( age === 0) {
-            setAgeMessage('You are a twinkle in your daddy\'s eye');
-        }
-
-       if ( age >= 1 && age <= 12) {
-        setAgeMessage('You are a Child');
-       }
-
-       if ( age >= 13 && age <= 19) {
-        setAgeMessage('You are a Teen');
-       }
-       */
-       //exp
-       // The value we'll be evaluating:
         
 
         // Matches for any case where the expression === `true`:
@@ -107,15 +92,13 @@ const AgeCounter: FC<AgeCounterProps> = ({ initAge }) => {
         console.log('handleSave triggered');
     }
 
-
-      const handleIncrement = () => {
+    const handleIncrement = () => {
         setAge(prevCount => prevCount + 1);
-      };
+    };
 
-      //Create handleDecrement event handler
-      const handleDecrement = () => {
-        setAge(prevCount => prevCount - 1);
-      };
+    const handleDecrement = () => {
+    setAge(prevCount => prevCount - 1);
+    };
 
     return (
         <div className={styles['age-counter']}>
