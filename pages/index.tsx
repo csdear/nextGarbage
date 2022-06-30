@@ -21,6 +21,7 @@ import BlondeGirl from '../src/components/blonde-girl';
 import ImageList from '../src/components/image-list';
 import WizardBio from '../src/components/wizard-bio';
 import AgeCounter from '../src/components/age-counter';
+import SimpleList from '../src/components/simple-list';
 
 const Index: FC = () => {
   const [userInput, setUserInput] = useState<string>('');
@@ -32,6 +33,8 @@ const Index: FC = () => {
   const imageData = [{"url":"https://i.imgur.com/WiVhNzA.png","description":"A-10 warthog","featured":true,"id":"001"},
   {"url":"https://i.imgur.com/V86wcMO.png","description":"Steam Engine","featured":false,"id":"002"},
   {"url":"https://i.imgur.com/6i6VCLD.png","description":"Corvette Stingray","featured":false,"id":"003"}];
+
+  const list = ['a', 'b', 'c'];
 
   useEffect(() => {
     userInput ? setShowError(false) : setShowError(true);
@@ -115,6 +118,7 @@ const Index: FC = () => {
       </WizardBio>
       <br />
       <AgeCounter initAge={5} />
+      <SimpleList list={list} />
     </div>
   );
 };
