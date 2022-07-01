@@ -22,6 +22,7 @@ import ImageList from '../src/components/image-list';
 import WizardBio from '../src/components/wizard-bio';
 import AgeCounter from '../src/components/age-counter';
 import SimpleList from '../src/components/simple-list';
+import todoData from '../src/mockData/todos.json';
 
 const Index: FC = () => {
   const [userInput, setUserInput] = useState<string>('');
@@ -118,7 +119,7 @@ const Index: FC = () => {
       </WizardBio>
       <br />
       <AgeCounter initAge={5} />
-      <SimpleList list={list} />
+      <SimpleList listItems={todoData} />
     </div>
   );
 };

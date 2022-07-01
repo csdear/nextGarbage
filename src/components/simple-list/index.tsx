@@ -1,19 +1,37 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import styles from "./simple-list.module.scss";
 
+
+
+// interface SimpleListItem {
+//     userId: number;
+//     id: number;
+//     title: string;
+//     completed: boolean;
+// }
+
 interface SimpleListProps {
-    list: Array[string];
+    listItems: IListItem[];
 }
 
-const SimpleList: FC<SimpleListProps> = ({ list }) => {
+interface SimpleListItemProps {
+    listItem: IListItem;
+}
 
+const SimpleListItem: FC<SimpleListItemProps> = ({listItem}) => {
+    return <li>{listItem.title} - {listItem.userId} - {listItem.completed.toString()} - {listItem.id}</li>
+}
+
+
+const SimpleList: FC<SimpleListProps> = ({ listItems }): ReactElement => {
 return (
     <div className={styles["simple-list"]}>
         <div className={styles["simple-list__someSubDiv"]}>
+            <h3>Simple List TS</h3>
             <ul>
-                {list.map((item) => {
-                return <li key={item}>{item}</li>;
-                })}
+            {listItems.map((listItem, index) => (
+                <SimpleListItem key={index} listItem={listItem} />
+            ))}
             </ul>
         </div>
     </div>

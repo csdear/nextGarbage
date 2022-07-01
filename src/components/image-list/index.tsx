@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from 'react';
 import styles from "./image-list.module.scss";
-import { IImage } from "../../types"
+
 
 //prop passed in will be something like  .....
 // const photos = [{"fileName":"planes.jpeg","description":"A-10 warthog","featured":true,"id":"001"},
@@ -34,7 +34,7 @@ const ImageListItem: FC<ImageListItemProps> = ({ image }) => {
         <h1>{image.id}</h1>
         {image.featured && (<p>Featured!</p>) }
         </div>
-    );  
+    );
 }
 
 
