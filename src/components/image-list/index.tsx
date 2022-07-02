@@ -15,15 +15,11 @@ import styles from "./image-list.module.scss";
 // to give you ts errors, 'string' only refers to a type, but is being used as a value here.
 // Also might be useful when styling images with flexbox :  https://www.developerdrive.com/responsive-image-gallery-flexbox/
 
-//1. main props
-interface ImageListProps {
-    images: IImage[];
-}
+//1. main props (moved to types.d.ts)
 
-//2. item props
-interface ImageListItemProps {
-    image: IImage;
-}
+
+//2. item props (moved to types.d.ts)
+
 
 //3. Sub-internal-component for Item
 // - uses interface ImageListItemProps

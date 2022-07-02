@@ -1,29 +1,26 @@
-import React, { FC, ReactElement } from "react";
+import React, { FC } from "react";
 import styles from "./simple-list.module.scss";
 
+/**
+ * LIT1: Simple List ITEMS and simple list ITEM Component Definition.
+ * See also LIT2: instantiation and prop passing in pages/index.tsx  
+ */
 
-
-// interface SimpleListItem {
-//     userId: number;
-//     id: number;
-//     title: string;
-//     completed: boolean;
-// }
-
-interface SimpleListProps {
-    listItems: IListItem[];
-}
-
-interface SimpleListItemProps {
-    listItem: IListItem;
-}
-
+/**
+ * Simple List ITEM
+ * @param listItem - a single list item { item: value} from the JSON file.   
+ * @returns html element <li> with output of the data.  
+ */
 const SimpleListItem: FC<SimpleListItemProps> = ({listItem}) => {
     return <li>{listItem.title} - {listItem.userId} - {listItem.completed.toString()} - {listItem.id}</li>
 }
 
-
-const SimpleList: FC<SimpleListProps> = ({ listItems }): ReactElement => {
+/**
+ * Simple list for the ITEMS
+ * @param listItems - json data object [{}] 
+ * @returns list of items 
+ */
+const SimpleList: FC<SimpleListProps> = ({ listItems }) => {
 return (
     <div className={styles["simple-list"]}>
         <div className={styles["simple-list__someSubDiv"]}>

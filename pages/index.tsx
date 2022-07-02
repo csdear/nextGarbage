@@ -21,6 +21,10 @@ import BlondeGirl from '../src/components/blonde-girl';
 import ImageList from '../src/components/image-list';
 import WizardBio from '../src/components/wizard-bio';
 import AgeCounter from '../src/components/age-counter';
+/**
+ * LIT2A: Import of the components, mock data json file, and instantiation of Simplelist and prop passed.
+ * Next, see LIT3: mockData/todos.json.   
+ */
 import SimpleList from '../src/components/simple-list';
 import todoData from '../src/mockData/todos.json';
 
@@ -119,6 +123,7 @@ const Index: FC = () => {
       </WizardBio>
       <br />
       <AgeCounter initAge={5} />
+      {/* LIT2A: SimpleList instantiation and mock data passed in as a prop */}
       <SimpleList listItems={todoData} />
     </div>
   );
