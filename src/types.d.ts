@@ -13,13 +13,14 @@ interface IImage {
     id: string;
   }
 
-  interface ImageListProps {
+  interface ImageListItem {
+    image: IImage;
+  }
+  interface ImageList {
     images: IImage[];
   }
   
-  interface ImageListItemProps {
-    image: IImage;
-  }
+  
 
   // ListItems and listItem
  interface IListItem {
@@ -28,12 +29,10 @@ interface IImage {
     title: string;
     completed: boolean;
 }
-
-interface SimpleListProps {
-  listItems: IListItem[];
-}
-
-interface SimpleListItemProps {
+interface SimpleListItem {
   listItem: IListItem;
+}
+interface SimpleList {
+  listItems: IListItem[];
 }
 

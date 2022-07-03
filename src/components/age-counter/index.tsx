@@ -9,10 +9,9 @@ const AgeCounter: FC<AgeCounterProps> = ({ initAge }) => {
 
     const ageValueFromProp = initAge;
 
+    // SIX STATES!
     const [age, setAge] = useState(ageValueFromProp);
-
     const [ageMessage, setAgeMessage] = useState(null);
-
     // state for age error messages to display to the user
     const [ageError, setAgeError] = useState(null);
 

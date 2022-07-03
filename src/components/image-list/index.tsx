@@ -22,8 +22,8 @@ import styles from "./image-list.module.scss";
 
 
 //3. Sub-internal-component for Item
-// - uses interface ImageListItemProps
-const ImageListItem: FC<ImageListItemProps> = ({ image }) => {
+// - uses interface ImageListItem
+const ImageListItem: FC<ImageListItem> = ({ image }) => {
     return (
         <div className={styles["image-list__items"]} data-testid={"image-list__items"}>
         <img src={image.url} alt={image.description}></img>
@@ -36,7 +36,7 @@ const ImageListItem: FC<ImageListItemProps> = ({ image }) => {
 
 //4. Main ImageList component hosting the items
 // ReactElement needed?
-const ImageList: FC<ImageListProps> = ({ images }): ReactElement => {
+const ImageList: FC<ImageList> = ({ images }): ReactElement => {
     return (
     <div className={styles["image-list"]}>
         <h1>Typescript Image list</h1>

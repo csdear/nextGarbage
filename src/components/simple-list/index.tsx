@@ -11,7 +11,7 @@ import styles from "./simple-list.module.scss";
  * @param listItem - a single list item { item: value} from the JSON file.   
  * @returns html element <li> with output of the data.  
  */
-const SimpleListItem: FC<SimpleListItemProps> = ({listItem}) => {
+const SimpleListItem: FC<SimpleListItem> = ({listItem}) => {
     return <li>{listItem.title} - {listItem.userId} - {listItem.completed.toString()} - {listItem.id}</li>
 }
 
@@ -20,7 +20,7 @@ const SimpleListItem: FC<SimpleListItemProps> = ({listItem}) => {
  * @param listItems - json data object [{}] 
  * @returns list of items 
  */
-const SimpleList: FC<SimpleListProps> = ({ listItems }) => {
+const SimpleList: FC<SimpleList> = ({ listItems }) => {
 return (
     <div className={styles["simple-list"]}>
         <div className={styles["simple-list__someSubDiv"]}>
