@@ -28,6 +28,7 @@ import AgeCounter from '../src/components/age-counter';
 import SimpleList from '../src/components/simple-list';
 import todoData from '../src/mockData/todos.json';
 import Box from '../src/components/box';
+import GridRuler from '../src/components/grid-ruler';
 
 const Index: FC = () => {
   const [userInput, setUserInput] = useState<string>('');
@@ -128,8 +129,17 @@ const Index: FC = () => {
       <SimpleList listItems={todoData} />
       <br />
       <Box>
-        <h3>ACME&reg; Box</h3>
-      </Box>
+          <h3>Standalone ACME&reg; Box</h3>
+          <GridRuler spacing="sm"></GridRuler>
+        </Box>
+        
+      [...]
+      <div className="container" style={{ margin: "16px", position: "relative", height: "100vh", background: "lightGrey" }}>
+        <Box>
+          <h3>ACME&reg; Box</h3>
+        </Box>
+      </div>
+      
     
     </div>
   );
