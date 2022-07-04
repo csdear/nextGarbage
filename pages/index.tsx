@@ -27,6 +27,7 @@ import AgeCounter from '../src/components/age-counter';
  */
 import SimpleList from '../src/components/simple-list';
 import todoData from '../src/mockData/todos.json';
+import Box from '../src/components/box';
 
 const Index: FC = () => {
   const [userInput, setUserInput] = useState<string>('');
@@ -125,6 +126,11 @@ const Index: FC = () => {
       <AgeCounter initAge={5} />
       {/* LIT2A: SimpleList instantiation and mock data passed in as a prop */}
       <SimpleList listItems={todoData} />
+      <br />
+      <Box>
+        <h3>ACME&reg; Box</h3>
+      </Box>
+    
     </div>
   );
 };
