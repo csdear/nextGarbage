@@ -30,6 +30,7 @@ import todoData from '../src/mockData/todos.json';
 import Box from '../src/components/box';
 import GridRuler from '../src/components/grid-ruler';
 import Grid from '../src/components/grid';
+import { relative } from 'path';
 
 const Index: FC = () => {
   const [userInput, setUserInput] = useState<string>('');
@@ -134,31 +135,42 @@ const Index: FC = () => {
         </Box>
 
       [...]
+      {/* main container */}
       <div className="container" style={{ margin: "16px", position: "relative", height: "100vh", background: "lightGrey" }}>
-      <GridRuler spacing="sm"></GridRuler>
+
+      <GridRuler spacing="sm"></GridRuler> {/* spacing: sm, md or lg */}
         <Box>
           <h3>ACME&reg; Box</h3>
         </Box>
+        <br/>
 
         <Grid
-        container
-        spacing="sm"
-        alignItems="center"
-        style={{ height: "100%" }}
+        container // container: remove for full width, vertical stack of pancakes
+        spacing="sm"  // spacing: xs, sm, md, or lg.
+        alignItems="flex-start" // alignItems : "flex-start" | "center" | "flex-end"; Alignment of grid items Top, Middle or Bottom.
+        justifyContent="flex-start" // justifyContent : "flex-start" | "center" | "flex-end" | "space-between";
+        style={{ height: "75%", background: "lightBlue" }} // Note I have made as a default height of 75% and background color lightBlue so you can see the bounds of the Grid.
       >
-        <Grid item xs={1} sm={6} md={4} lg={3}>
+        {/*Grid item xs, sm, md and lg controls how much horizontal width THIS grid item and box combination will take up, out of a  maximum of 12 columns.
+          the number is how many columns to take up. Subsequent Grid  items will wrap to the next line if they  run out of room.
+          'lg' is the most common, but resize the viewport to see how the grid itrem re-draws itself in xs, sm, md dimensions.
+          lg={3} : 3/12 columns
+          lg={6} : 6/12 columns. Grid item takes up half the screen.
+          lg={12} : 12/12, full width.
+        */}
+        <Grid item xs={1} sm={6} md={4} lg={3} style={{ background: "pink" }}>
           <Box>Box1</Box>
         </Grid>
 
-        <Grid item xs={1} sm={6} md={4} lg={3}>
+        <Grid item xs={1} sm={6} md={4} lg={3} style={{ background: "Blue" }}>
           <Box>Box 2</Box>
         </Grid>
 
-        <Grid item xs={1} sm={6} md={4} lg={3}>
+        <Grid item xs={1} sm={6} md={4} lg={3} style={{ background: "coral" }}>
           <Box>Box 3</Box>
         </Grid>
 
-        <Grid item xs={1} sm={6} md={4} lg={3}>
+        <Grid item xs={1} sm={6} md={4} lg={3} style={{ background: "orange" }}>
           <Box>Box 4</Box>
         </Grid>
       </Grid>
