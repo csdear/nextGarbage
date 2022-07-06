@@ -23,12 +23,13 @@ import WizardBio from '../src/components/wizard-bio';
 import AgeCounter from '../src/components/age-counter';
 /**
  * LIT2A: Import of the components, mock data json file, and instantiation of Simplelist and prop passed.
- * Next, see LIT3: mockData/todos.json.   
+ * Next, see LIT3: mockData/todos.json.
  */
 import SimpleList from '../src/components/simple-list';
 import todoData from '../src/mockData/todos.json';
 import Box from '../src/components/box';
 import GridRuler from '../src/components/grid-ruler';
+import Grid from '../src/components/grid';
 
 const Index: FC = () => {
   const [userInput, setUserInput] = useState<string>('');
@@ -130,17 +131,40 @@ const Index: FC = () => {
       <br />
       <Box>
           <h3>Standalone ACME&reg; Box</h3>
-          <GridRuler spacing="sm"></GridRuler>
         </Box>
-        
+
       [...]
       <div className="container" style={{ margin: "16px", position: "relative", height: "100vh", background: "lightGrey" }}>
+      <GridRuler spacing="sm"></GridRuler>
         <Box>
           <h3>ACME&reg; Box</h3>
         </Box>
+
+        <Grid
+        container
+        spacing="sm"
+        alignItems="center"
+        style={{ height: "100%" }}
+      >
+        <Grid item xs={1} sm={6} md={4} lg={3}>
+          <Box>Box1</Box>
+        </Grid>
+
+        <Grid item xs={1} sm={6} md={4} lg={3}>
+          <Box>Box 2</Box>
+        </Grid>
+
+        <Grid item xs={1} sm={6} md={4} lg={3}>
+          <Box>Box 3</Box>
+        </Grid>
+
+        <Grid item xs={1} sm={6} md={4} lg={3}>
+          <Box>Box 4</Box>
+        </Grid>
+      </Grid>
       </div>
-      
-    
+
+
     </div>
   );
 };
