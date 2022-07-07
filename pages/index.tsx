@@ -30,6 +30,7 @@ import todoData from '../src/mockData/todos.json';
 import Box from '../src/components/box';
 import GridRuler from '../src/components/grid-ruler';
 import Grid from '../src/components/grid';
+import SomeText from '../src/components/some-text';
 import { relative } from 'path';
 
 const Index: FC = () => {
@@ -176,6 +177,22 @@ const Index: FC = () => {
       </Grid>
       </div>
 
+      <SomeText superSized textAlign='center'>
+      <p>
+          Integer elementum massa at nulla placerat varius.
+          Suspendisse in libero risus, in interdum massa.
+          Vestibulum ac leo vitae metus faucibus gravida ac in neque.
+          Nullam est eros, suscipit sed dictum quis, accumsan a ligula.
+      </p>
+      </SomeText>
+      <SomeText textAlign='right'>
+      <p>
+          -- Integer elementum massa at nulla placerat varius.
+          Suspendisse in libero risus, in interdum massa.
+          Vestibulum ac leo vitae metus faucibus gravida ac in neque.
+          Nullam est eros, suscipit sed dictum quis, accumsan a ligula.
+      </p>
+      </SomeText>
 
     </div>
   );

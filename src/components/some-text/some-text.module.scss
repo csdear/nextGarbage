@@ -1,0 +1,50 @@
+
+$textAlign: (start, end, left, right, center, justify, justify-all, match-parent);
+
+// This sass media query strategy taken  from : https://jonsuh.com/blog/managing-responsive-breakpoints-with-sass-maps/
+$breakpoints: (
+  "small": 480px,
+  "medium": 800px,
+  "large": 1024px,
+);
+
+@mixin mq($mq-breakpoint, $mq-breakpoints: $breakpoints) {
+    // If $mq-breakpoint is a key that exists in
+    // $mq-breakpoints, get and use the value
+    @if map-has-key($mq-breakpoints, $mq-breakpoint) {
+      $mq-breakpoint: map-get($mq-breakpoints, $mq-breakpoint);
+    }
+
+    @media screen and (min-width: #{$mq-breakpoint}) {
+      @content;
+    }
+  }
+
+.some-text {
+    background-color: coral;
+    width : 50%;
+    position: relative;
+    left: 30rem;
+    &_superSized {
+        font-size: 40px;
+    }
+
+    @each $value in $textAlign {
+        &_textAlign_#{$value} {
+          text-align: $value;
+        }
+      }
+  } // end .some-text
+
+  @include mq(small) {
+    .some-text { background-color: blue; }
+  }
+
+  @include mq(medium) {
+    .some-text    { background-color: green; }
+  }
+  @include mq(large) {
+    .some-text    {
+        background-color: coral;
+        font-style: italic; }
+  }
