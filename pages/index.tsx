@@ -1,6 +1,7 @@
 import { FC, useState, useEffect } from 'react';
 import Link from 'next/link';
 import Hello from '../src/components/hello';
+import {motion} from 'framer-motion';
 import RenderCounter from '../src/components/render-counter';
 import Search from '../src/components/search';
 import BareBones from '../src/components/bare-bones';
@@ -31,6 +32,8 @@ import Box from '../src/components/box';
 import GridRuler from '../src/components/grid-ruler';
 import Grid from '../src/components/grid';
 import SomeText from '../src/components/some-text';
+import Date from '../src/components/date'
+import ImageSlider from '../src/components/image-slider';
 import { relative } from 'path';
 
 const Index: FC = () => {
@@ -59,7 +62,7 @@ const Index: FC = () => {
 
   return (
     <div>
-      <h1>Garbage.</h1>
+      <motion.h1 animate={{ x:250 }}>Garbage.</motion.h1>
       <Link href="/grid-forged">
         <a>Grid Forged</a>
       </Link>
@@ -193,6 +196,8 @@ const Index: FC = () => {
           Nullam est eros, suscipit sed dictum quis, accumsan a ligula.
       </p>
       </SomeText>
+      <Date dateString='2020-01-02'></Date>
+      <ImageSlider />
 
     </div>
   );
