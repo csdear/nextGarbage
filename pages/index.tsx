@@ -62,24 +62,25 @@ const Index: FC = () => {
 
   return (
     <div>
-      <motion.h1 animate={{ x:250 }}>Garbage.</motion.h1>
-      <Link href="/grid-forged">
-        <a>Grid Forged</a>
-      </Link>
-      <Hello />
+      <motion.h1 whileHover={{ scale: 0.8 }}>Garbage.</motion.h1>
       <motion.div
                 style={{
-                    width: 150,
-                    height: 150,
-                    borderRadius: 30,
-                    backgroundColor: "black",
+                    width: 20,
+                    height: 20,
+                    //  borderRadius: 30,
+                    // backgroundColor: "black",
                     position: "relative",
                     left: "10rem"
 
                 }}
                 animate={{ rotate: 360 }}
-                transition={{ ease: "linear", duration: 2, repeat: Infinity }}
-            />
+                transition={{ ease: "linear", duration: 2, repeat: Infinity }}>
+            &#128540;</motion.div>
+      <Link href="/grid-forged">
+        <a>Grid Forged</a>
+      </Link>
+      <Hello />
+
       <RenderCounter />
       <Search />
       <BareBones />
