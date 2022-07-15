@@ -34,6 +34,7 @@ import Grid from '../src/components/grid';
 import SomeText from '../src/components/some-text';
 import Date from '../src/components/date'
 import ImageSlider from '../src/components/image-slider';
+import ImageCarouselLayout from '../src/components/image-carousel-layout';
 import { relative } from 'path';
 
 const Index: FC = () => {
@@ -212,7 +213,6 @@ const Index: FC = () => {
       </SomeText>
       <Date dateString='2020-01-02'></Date>
       <ImageSlider />
-
     </div>
   );
 };

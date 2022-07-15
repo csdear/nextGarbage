@@ -1,4 +1,4 @@
-import {motion} from 'framer-motion';
+import {motion, useCycle} from 'framer-motion';
 import React, {FC, useRef, useEffect, useState} from 'react';
 import styles from './image-slider.module.scss'
 import images from '../../assets/images';
@@ -9,6 +9,7 @@ interface ImageSliderProps {
 
 const ImageSlider: FC<ImageSliderProps> = ({ MacGuffin='Framer Motion' }) => {
 console.log('img_Arr', images);
+
 // Create a state which is our width that we need to scroll
 // grab the width of our parent. Outer width (carousel) is much wider though not seen. because of
 // overflow hidden. LO 18:56
@@ -41,9 +42,10 @@ return (
             <motion.div ref={carousel} className={styles["image-slider__carousel"]}>
                 {/*Add drag to the inner container to move. outer (carousel will not move*/}
                 <motion.div drag="x" dragConstraints={{right: 0, left: -width}} whileTap={{ cursor: "grabbing"}} className={styles["image-slider__inner-carousel"]}>
-                    {images.map(image => {
+                    {images.map((image, index) => {
                         return(
                             <motion.div className={styles["image-slider__item"]} key={image.src}>
+                                {console.log('this img index:', index)}
                                 <img src={image.src} alt="" />
                             </motion.div>
                         );
