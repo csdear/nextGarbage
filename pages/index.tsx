@@ -41,6 +41,8 @@ const Index: FC = () => {
   const [userInput, setUserInput] = useState<string>('');
   // const [isError, setIsError] = useState<boolean>(true); // hell, showError is enough for this simple demo.
   const [showError, setShowError] = useState<boolean>(true);
+  
+
 
   const userName = 'csdear';
   //prop passed in will be something like  .....
@@ -102,6 +104,8 @@ const Index: FC = () => {
         onChange={e => handleInputChange(e.target.value)}
         value={userInput}
       />
+      
+
       <h3>{userInput}</h3>
       <PostPunk title="Cool World">
         <small> ~This~ Data from HoC as Children...</small>

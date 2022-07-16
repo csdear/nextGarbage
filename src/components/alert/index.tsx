@@ -1,5 +1,4 @@
-import classNames from "classnames";
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, useState } from "react";
 import styles from "./alert.module.scss";
 import cn from 'classnames'
 
@@ -9,10 +8,17 @@ interface AlertProps {
 }
 
 const Alert: FC<AlertProps> = ({ children, type }) => {
+    const [isActive, setActive] = useState(false);
     const classNames = cn({
         [styles["alert__success"]]: type === 'success',
         [styles["alert__error"]]: type === 'error',
     });
+
+    const buttonClasses = cn({
+            "btn": true,
+            "btn__active": isActive,
+            [styles.btn__active]: isActive,
+    })
 
 
     return (
@@ -21,6 +27,11 @@ const Alert: FC<AlertProps> = ({ children, type }) => {
                 <div className={classNames}>
                     {children}
                 </div>
+                {isActive && (
+                    <button className={buttonClasses} onClick={() => setActive(!isActive)}>Pretend Submit</button>
+                )}
+                
+                 
             </div>
 
         </div>
