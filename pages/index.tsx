@@ -38,6 +38,7 @@ import ImageCarouselLayout from '../src/components/image-carousel-layout';
 import { relative } from 'path';
 import cn from 'classnames'
 import styles from '../src/components/home/home.module.scss'
+import GridCards from '../src/components/grid-cards';
 
 const Index: FC = () => {
   const [userInput, setUserInput] = useState<string>('');
@@ -246,6 +247,7 @@ const Index: FC = () => {
       </SomeText>
       <Date dateString='2020-01-02'></Date>
       <ImageSlider />
+      <GridCards />
     </div>
   );
 };
