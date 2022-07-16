@@ -36,6 +36,8 @@ import Date from '../src/components/date'
 import ImageSlider from '../src/components/image-slider';
 import ImageCarouselLayout from '../src/components/image-carousel-layout';
 import { relative } from 'path';
+import cn from 'classnames'
+import styles from '../src/components/home/home.module.scss'
 
 const Index: FC = () => {
   const [userInput, setUserInput] = useState<string>('');
@@ -62,6 +64,16 @@ const Index: FC = () => {
 
     // setIsError(false);
   };
+
+  const [isActive, setActive] = useState(false);
+
+  const buttonClasses = cn({
+    "btn": true,
+    "btn__active": isActive,
+    [styles.btn__active]: isActive,
+})
+
+
 
   return (
     <div>
@@ -93,9 +105,16 @@ const Index: FC = () => {
         <p>Try again in text field below</p>
         </Alert>}
       
-        {!showError && <Alert type='success'>
+        {!showError && 
+        <>
+        <Alert type='success'>
         <h1>Success!</h1>
-        </Alert>}
+        </Alert>
+        <button className={buttonClasses}  onClick={() => setActive(!isActive)}>Pretend Submit</button>
+        </>
+        }
+
+
 
       <input
         // className={styles["alert__input"]}
@@ -104,6 +123,8 @@ const Index: FC = () => {
         onChange={e => handleInputChange(e.target.value)}
         value={userInput}
       />
+
+      
       
 
       <h3>{userInput}</h3>
