@@ -85,7 +85,15 @@ const Index: FC = () => {
       <RenderCounter />
       <Search />
       <BareBones />
-      {showError && <Alert />}
+      {showError && <Alert type='error'>
+        <h1>Alert!</h1>
+        <p>You haven't entered nuthin!</p>
+        <p>Try again in text field below</p>
+        </Alert>}
+      
+        {!showError && <Alert type='success'>
+        <h1>Success!</h1>
+        </Alert>}
 
       <input
         // className={styles["alert__input"]}

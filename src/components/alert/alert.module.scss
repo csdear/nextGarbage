@@ -1,6 +1,6 @@
 .alert {
     &__container {
-      background-color: lightgreen;
+      background-color: lightslategrey;
       width: 40%;
       border-radius: 15px;
       padding: 2px 16px;
@@ -10,6 +10,12 @@
         -webkit-box-shadow: 10px 5px 20px 6px #C970FF;
         box-shadow: 10px 5px 20px 6px #C970FF;
       }
+    }
+    &__error {
+      color: red;
+    }
+    &__success {
+      color: green;
     }
     &__input {
       display: block;
