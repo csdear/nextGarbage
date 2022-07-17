@@ -53,16 +53,18 @@ type Data = {
   };
 };
 
+
 export const getStaticProps: GetStaticProps<{ swapis: Data }> = async () => {
   const res = await fetch("https://www.swapi.tech/api/");
   const swapis: Data = await res.json();
-
+  
   return {
     props: {
       swapis
-    }
+    },
   };
 };
+
 
 const Index: FC = ({
   swapis
@@ -120,6 +122,9 @@ const Index: FC = ({
             &#128540;</motion.div>
       <Link href="/grid-forged">
         <a>Grid Forged</a>
+      </Link>
+      <Link href="/people">
+        <a>people</a>
       </Link>
       <Hello />
       <h2>List of Films</h2>
