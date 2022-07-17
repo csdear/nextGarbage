@@ -1,4 +1,5 @@
 import { FC, useState, useEffect } from 'react';
+import { InferGetStaticPropsType, GetStaticProps } from "next";
 import Link from 'next/link';
 import Hello from '../src/components/hello';
 import {motion} from 'framer-motion';
@@ -40,12 +41,37 @@ import cn from 'classnames'
 import styles from '../src/components/home/home.module.scss'
 import GridCards from '../src/components/grid-cards';
 
-const Index: FC = () => {
+type Data = {
+  message: string;
+  result: {
+    id: string;
+    films: string;
+    people: string;
+    planets: string;
+    species: string;
+    vehicles: string;
+  };
+};
+
+export const getStaticProps: GetStaticProps<{ swapis: Data }> = async () => {
+  const res = await fetch("https://www.swapi.tech/api/");
+  const swapis: Data = await res.json();
+
+  return {
+    props: {
+      swapis
+    }
+  };
+};
+
+const Index: FC = ({
+  swapis
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [userInput, setUserInput] = useState<string>('');
   // const [isError, setIsError] = useState<boolean>(true); // hell, showError is enough for this simple demo.
   const [showError, setShowError] = useState<boolean>(true);
   
-
+  console.log('swapit', swapis);
 
   const userName = 'csdear';
   //prop passed in will be something like  .....
@@ -96,7 +122,12 @@ const Index: FC = () => {
         <a>Grid Forged</a>
       </Link>
       <Hello />
-
+      <h2>List of Films</h2>
+      {Object.entries(swapis?.result || {}).map(([key, value]) => (
+        <ul key={key}>
+          <li>{value}</li>
+        </ul>
+      ))}
       <RenderCounter />
       <Search />
       <BareBones />
