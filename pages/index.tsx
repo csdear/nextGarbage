@@ -57,7 +57,7 @@ type Data = {
 export const getStaticProps: GetStaticProps<{ swapis: Data }> = async () => {
   const res = await fetch("https://www.swapi.tech/api/");
   const swapis: Data = await res.json();
-  
+
   return {
     props: {
       swapis
@@ -72,7 +72,7 @@ const Index: FC = ({
   const [userInput, setUserInput] = useState<string>('');
   // const [isError, setIsError] = useState<boolean>(true); // hell, showError is enough for this simple demo.
   const [showError, setShowError] = useState<boolean>(true);
-  
+
   console.log('swapit', swapis);
 
   const userName = 'csdear';
@@ -141,8 +141,8 @@ const Index: FC = ({
         <p>You haven't entered nuthin!</p>
         <p>Try again in text field below</p>
         </Alert>}
-      
-        {!showError && 
+
+        {!showError &&
         <>
         <Alert type='success'>
         <h1>Success!</h1>
@@ -161,8 +161,8 @@ const Index: FC = ({
         value={userInput}
       />
 
-      
-      
+
+
 
       <h3>{userInput}</h3>
       <PostPunk title="Cool World">
@@ -224,7 +224,7 @@ const Index: FC = ({
         </Box>
 
       [...]
-      {/* main container */}
+      {/* GRID starts here with the folloing div container  */}
       <div className="container" style={{ margin: "16px", position: "relative", height: "100vh", background: "lightGrey" }}>
 
       <GridRuler spacing="sm"></GridRuler> {/* spacing: sm, md or lg */}
