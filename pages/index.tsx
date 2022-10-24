@@ -123,9 +123,15 @@ const Index: FC = ({
       <Link href="/grid-forged">
         <a>Grid Forged</a>
       </Link>
+       |-------|
       <Link href="/people">
         <a>people</a>
       </Link>
+      |-------|
+      <Link href="/tsreact">
+        <a>ts+react</a>
+      </Link>
+      |-------|
       <Hello />
       <h2>List of Films</h2>
       {Object.entries(swapis?.result || {}).map(([key, value]) => (
