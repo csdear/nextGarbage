@@ -40,6 +40,7 @@ import { relative } from 'path';
 import cn from 'classnames'
 import styles from '../src/components/home/home.module.scss'
 import GridCards from '../src/components/grid-cards';
+import Jumbotron from '../src/components/jumbotron';
 
 type Data = {
   message: string;
@@ -290,6 +291,7 @@ const Index: FC = ({
       <Date dateString='2020-01-02'></Date>
       <ImageSlider />
       <GridCards />
+      <Jumbotron />
     </div>
   );
 };

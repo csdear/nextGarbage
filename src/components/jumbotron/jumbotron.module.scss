@@ -1,0 +1,38 @@
+.jumbotron {
+    &__container {
+      background: url('https://images.pexels.com/photos/694740/pexels-photo-694740.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat;
+      background-position: center;
+      // -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+      // filter: blur(5px);
+      width: 40%;
+      border-radius: 15px;
+      padding: 2px 16px;
+      margin-top: 10px;
+      position: relative;
+      left: 200px;
+
+      &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: red;
+          filter: blur(150px);
+          z-index:0;
+      }
+}
+
+&__copy {
+    color: white;
+    position: relative;
+    z-index:1;
+}
+
+  }
+
+      //   &:hover {
+    //     -webkit-box-shadow: 10px 5px 20px 6px #C970FF;
+    //     box-shadow: 10px 5px 20px 6px #C970FF;
+    //   }
