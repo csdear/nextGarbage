@@ -35,7 +35,7 @@ import Grid from '../src/components/grid';
 import SomeText from '../src/components/some-text';
 import Date from '../src/components/date'
 import ImageSlider from '../src/components/image-slider';
-import ImageCarouselLayout from '../src/components/image-carousel-layout';
+// import ImageCarouselLayout from '../src/components/image-carousel-layout';
 import { relative } from 'path';
 import cn from 'classnames'
 import styles from '../src/components/home/home.module.scss'

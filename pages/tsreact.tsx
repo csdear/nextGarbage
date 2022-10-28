@@ -1,4 +1,4 @@
-import { FC, ReactNode, useCallback } from 'react';
+import { FC, ReactNode, useCallback, useState } from 'react';
 // for 'pages' I source styles from a global home.module.scss
 import styles from '../src/components/home/home.module.scss'
 
@@ -35,10 +35,23 @@ interface BoxProps {
       </ul>
   )
 
+  //21.2 define payload type as an interface
+  interface Payload {
+      text: string;
+  }
+
 const TSReact = () => {
     const onListClick = useCallback((item: string) => {
         alert(item)
     }, [])
+
+    //21.1 use case : downloading an api payload and putting into state
+    // normally you just init state at null -- but what if we wanted to
+    // define the incoming payload's TYPE as well?
+    //22.3 Solved : open up useState generic, passing in the payload interface type, add a OR '|' operator for null
+    //this will make ts happy about what is going to go in this payload.
+    // 22.4 Create the payload. Go to /public,
+    const [payload, setPayload] = useState<Payload | null>(null);
 
     return (
      <div className={styles["ts-react__body"]}>

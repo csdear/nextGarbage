@@ -28,11 +28,15 @@ console.log('img_Arr', images);
 // with that we can invoke setWidth to  update the state
 // attribute whileTap={"grabbing"} makes it to where cursor rollover the entire canrousel area is a open hand to grabbed hand on click as opposed to a mouse pointer.
 const [width, setWidth] = useState(0);
-const carousel = useRef();
+// useRef "Object is possibly undefined"
+// fixed by generic HTMLDivElement -- see https://github.com/typescript-cheatsheets/react/issues/187
+const carousel = useRef<HTMLDivElement>();
 
 useEffect(() => {
-    console.log(carousel.current.scrollWidth, carousel.current.offsetWidth);
-    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);  //Sets constraint boundry for Left
+    // console.log(carousel.current.scrollWidth, carousel.current.offsetWidth);
+    const scrollWidth = carousel.current.scrollWidth;
+    const offsetWidth = carousel.current.offsetWidth;
+    setWidth( scrollWidth - offsetWidth);  //Sets constraint boundry for Left
 }, [])
 
 return (
@@ -45,7 +49,10 @@ return (
                     {images.map((image, index) => {
                         return(
                             <motion.div className={styles["image-slider__item"]} key={image.src}>
-                                {console.log('this img index:', index)}
+                                {/* WOW this console log was causing the TS error "This JSX tag's 'children' prop
+                                expects a single child of type 'ReactNode', but multiple children were provided."
+                                but was resolved when we simply commented out or removed the console.log*/}
+                                {/* {console.log('this img index:', index)} */}
                                 <img src={image.src} alt="" />
                             </motion.div>
                         );
