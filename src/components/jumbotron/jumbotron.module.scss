@@ -1,33 +1,92 @@
+$breakpointMid: 982px;
+$breakpointSml: 859px;
+$breakpointXSml: 638px;
+
+@mixin md {
+    @media (max-width: #{$breakpointMid}) {
+        @content;
+    }
+ }
+
+ @mixin sm {
+    @media (max-width: #{$breakpointSml}) {
+        @content;
+    }
+ }
+
+ @mixin x-sm {
+    @media (max-width: #{$breakpointXSml}) {
+        @content;
+    }
+ }
+
 .jumbotron {
-    position: relative;
     &__container {
-      // background: url('https://images.pexels.com/photos/694740/pexels-photo-694740.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat;
-      // background-position: center;
-      // -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
-      // filter: blur(5px);
-      width: 40%;
-      border-radius: 15px;
-      padding: 2px 16px;
-      margin-top: 10px;
-      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      position: relative;
+      left: 10rem;
+      width: 80%;
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+    @include md {
+        left: 6rem;
+    }
+
+    @include x-sm {
+        left: 3rem;
+    }
 }
+
 &__image {
-    position: absolute; top: 0; left: 0; right: 0; bottom: 0;-webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
+    background: url('https://images.pexels.com/photos/694740/pexels-photo-694740.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-position: center;
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px)hue-rotate(200deg);
     height: 222px;
     background-color: #ccc;
+    border-radius: 2px;
+
 }
 &__copy {
-    // color: white;
-    position: absolute; top: 50%; width: 50%; left: 50%; color: #fff;
+     position: absolute;
+     top: 2rem;
+     width: 100%;
+     left: 5rem;
+     color: #fff;
+    @include md {
+        width: 80%;
+    }
+    @include x-sm {
+        left: 3rem;
+    }
+}
+
+&__copy h1 {
+    font-weight: bold;
+    font-size: 3rem;
+    margin: 0;
+    @include sm {
+        font-size: 2rem;
+    }
+    @include x-sm {
+        text-align: center;
+    }
+}
+
+&__copy p {
+    font-size: 1.3rem;
+    line-height: .5rem;
+    word-wrap: break-word;
+    @include md {
+       line-height: inherit;
+    }
+    @include x-sm {
+        font-size: 1rem;
+        text-align: center;
+    }
 }
 
   }
-
-      //   &:hover {
-    //     -webkit-box-shadow: 10px 5px 20px 6px #C970FF;
-    //     box-shadow: 10px 5px 20px 6px #C970FF;
-    //   }

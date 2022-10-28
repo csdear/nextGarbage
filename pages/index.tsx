@@ -291,7 +291,9 @@ const Index: FC = ({
       <Date dateString='2020-01-02'></Date>
       <ImageSlider />
       <GridCards />
+      <hr />
       <Jumbotron />
+      <hr />
     </div>
   );
 };
