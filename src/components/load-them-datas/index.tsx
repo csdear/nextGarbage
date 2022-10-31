@@ -16,7 +16,7 @@ const LoadThemDatas: FC<LoadThemDatasProps> = ( { inputSearch }) => {
     // if (error) return <p>Error!</p>;
 
     return <div>
-                An Axios-Hooks API Response : {JSON.stringify(data)}
+                LoadThemDatas. An Axios-Hooks API Response : {JSON.stringify(data)}
                 {error && (
                      <h1>An error occured</h1>
                  )}
