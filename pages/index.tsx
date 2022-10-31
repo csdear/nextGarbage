@@ -214,6 +214,12 @@ const Index: FC = ({
       <Bar />
       <CountUp title="A Counter" initialCount={0} />
       <BareBonesProps title="FC+TS With Props" />
+      {/*
+      load-them-datas component to demonstrate Axios-Hooks.
+      A super effective way to make api calls.  Here we pass
+      a userName as a query string parameter, and json data
+      re: the user's github account is returned.
+      userName csdear */}
       <LoadThemDatas inputSearch={userName} />
       {/* <LoadThemDatas /> */}
       <BlondeGirl name="Stacy" id={123}/>

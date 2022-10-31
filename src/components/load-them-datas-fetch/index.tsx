@@ -1,3 +1,6 @@
+
+// THIS COMPONENT NOT IMPLEMENTED. MacGuffin commented out in order to build.
+// Uses fetch to load data-- rather we use a superior axios hooks -- see load-them-datas
 import React, { FC, useEffect, useState } from "react";
 import styles from "./load-them-datas-fetch.module.scss";
 
@@ -30,7 +33,7 @@ const LoadThemDatasFetch: FC<LoadThemDatasFetchProps> = ({ subreddit='battlestat
 return (
     <div className={styles["load-them-datas-fetch"]}>
     <div className={styles["load-them-datas-fetch__someSubDiv"]}>
-        <h1>Component - LoadThemDatasFetch - {MacGuffin}</h1>
+        {/* <h1>Component - LoadThemDatasFetch - {MacGuffin}</h1> */}
         <h2>Pizza Size : Jumbo</h2>
     </div>
     </div>
