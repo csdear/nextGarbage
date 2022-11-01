@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useReducer, useRef } from 'react';
 import { FC, ReactNode, useCallback, useState } from 'react';
 // for 'pages' I source styles from a global home.module.scss
 import styles from '../src/components/home/home.module.scss'
@@ -42,6 +42,16 @@ interface BoxProps {
       text: string;
   }
 
+  interface Todo {
+    id: number;
+    done: boolean;
+    text: string;
+  }
+
+  type ActionType =
+    | { type: "ADD"; text: string }
+    | { type: "REMOVE"; id: number };
+
 const TSReact = () => {
     const onListClick = useCallback((item: string) => {
         alert(item)
@@ -65,6 +75,37 @@ const TSReact = () => {
         }))
     },[]) // empty dependency array means it will run once on render.
 
+    const [todos, dispatch] = useReducer((state: Todo[], action: ActionType) => {
+        switch(action.type) {
+        case "ADD":
+          return [
+            ...state,
+            {
+              id: state.length,
+              text: action.text,
+              done: false,
+            },
+          ];
+        case "REMOVE":
+          return state.filter(({ id }) => id !== action.id);
+        default:
+          throw new Error();
+      }
+    },[]);
+
+    const newTodoRef = useRef<HTMLInputElement>(null);
+
+    const onAddTodo = useCallback(() => {
+      if (newTodoRef.current) {
+        dispatch({
+          type: "ADD",
+          text: newTodoRef.current.value,
+        });
+        newTodoRef.current.value = '';
+      }
+    }, []);
+
+
     return (
      <div className={styles["ts-react__body"]}>
          <h1>TS + React</h1>
@@ -74,6 +115,24 @@ const TSReact = () => {
             <List items={["one", "two","three"]} onClick={onListClick} />
             {/* Lets put the response in one of our spiffy boxes */}
             <Box title="API Response to State">{JSON.stringify(payload)}</Box>
+
+            <Heading title="Todos" />
+            {todos.map((todo) => (
+              <div key={todo.id}>
+                {todo.text}
+              <button onClick={() => dispatch({
+                type: "REMOVE",
+                id: todo.id,
+              })
+            }
+            >Remove
+            </button>
+            </div>
+            ))}
+            <div>
+              <input type="text" ref={newTodoRef} />
+              <button onClick={onAddTodo}>Add Todo</button>
+            </div>
      </div>
   );
 };
