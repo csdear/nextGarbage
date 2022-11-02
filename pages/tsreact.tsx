@@ -1,5 +1,5 @@
 import { useEffect, useReducer, useRef } from 'react';
-import { FC, ReactNode, useCallback, useState } from 'react';
+import { FC, ReactElement, ReactNode, useCallback, useState } from 'react';
 // for 'pages' I source styles from a global home.module.scss
 import styles from '../src/components/home/home.module.scss'
 
@@ -51,6 +51,54 @@ interface BoxProps {
   type ActionType =
     | { type: "ADD"; text: string }
     | { type: "REMOVE"; id: number };
+
+  /*
+    22.4. Very verbose prior, so lets use a utility ReturnType.
+    create a custom hook.
+    the  worlds simplist custom hook here -- useNumber
+    that returns a useState with a number. we could just init
+    as 0, but  intead lets make fancy and take in the initial value
+
+  */
+  const useNumber = (initialValue: number) => useState<number>(initialValue);
+  /* 22.5 : NExt create a type for useNumbervalue. We're making two types, one
+  for the value and one for the set value.
+  It gets angry  though "useNumber' refers to a value, but is being used as a type here. Did you mean 'typeof useNumber'?ts(2749)"
+  We want not the value of useNumber which would be the function itself, but the TYPE of the function.
+  We resolve by adding 'typeof'
+  CMD-K,CMD I on 'useNumberValue', revealed that we get an array back with the first item is of type number and  that second is that tricky
+  react Dispatch type we used prior in 22.2   :
+      type useNumberValue = [number, Dispatch<SetStateAction<number>>]
+  So we replace value: number with our type useNumber..
+
+
+  */
+ type UseNumberValue = ReturnType<typeof useNumber>[0];
+  /*
+  22.7 then create another type for the set value
+  */
+  type UseNumberSetValue = ReturnType<typeof useNumber>[1];
+
+  /*22.2 Create a IncrementerComponent
+   setValue is the interesting part. For a setter. setValue can be a number, or a function that returns a number.
+   if we go to setValue in the piece of state we created.  we see that setValue is a type of "Reac.Dispatch<Reac.SetStateAction<number>>"
+   so we can use that long type to set the type for setValue.
+   We add a onClick handler that innvokes setValue setter with the value + 1
+
+
+   */
+  const Incrementer: FC<{
+    //...22.6 replace with type we created UseNumberValue
+    // value: number;
+    value: UseNumberValue;
+    //...22.8
+    // setValue: React.Dispatch<React.SetStateAction<number>>; Should have working code at this point.
+    setValue: UseNumberSetValue;
+  }> = ({ value, setValue }) => (
+    <button onClick={() => setValue(value + 1)}>
+      Add - {value}
+    </button>
+  )
 
 const TSReact = () => {
     const onListClick = useCallback((item: string) => {
@@ -105,6 +153,8 @@ const TSReact = () => {
       }
     }, []);
 
+    //22.1 Create an new piece of state of type number
+    const [value, setValue] = useNumber(0);
 
     return (
      <div className={styles["ts-react__body"]}>
@@ -115,7 +165,8 @@ const TSReact = () => {
             <List items={["one", "two","three"]} onClick={onListClick} />
             {/* Lets put the response in one of our spiffy boxes */}
             <Box title="API Response to State">{JSON.stringify(payload)}</Box>
-
+            {/*22.3 Add the Incrementer component here, passing two props, value and setValue */}
+            <Incrementer value={value} setValue={setValue} />
             <Heading title="Todos" />
             {todos.map((todo) => (
               <div key={todo.id}>
