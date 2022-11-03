@@ -48,6 +48,27 @@ interface BoxProps {
     text: string;
   }
 
+  const Button: React.FunctionComponent<
+  React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > & {
+    label?: string;
+  }
+> = ({ label, children, style, ...rest }) => (
+  <button
+    {...rest}
+    style={{
+      ...style,
+      backgroundColor: "green",
+      color: "white",
+      fontSize: "xx-large",
+    }}
+  >
+    {label ?? children}
+  </button>
+);
+
   type ActionType =
     | { type: "ADD"; text: string }
     | { type: "REMOVE"; id: number };
@@ -95,9 +116,12 @@ interface BoxProps {
     // setValue: React.Dispatch<React.SetStateAction<number>>; Should have working code at this point.
     setValue: UseNumberSetValue;
   }> = ({ value, setValue }) => (
-    <button onClick={() => setValue(value + 1)}>
-      Add - {value}
-    </button>
+    // v1 native version of button
+    // <button onClick={() => setValue(value + 1)}>Add - {value}</button>
+    // v2 use of custom Button component, but with children
+    // <Button onClick={() => setValue(value + 1)}>Add - {value}</Button>
+    // v3 +SUPERIOR+ using custom prop 'label' instead of consuming children
+    <Button onClick={() => setValue(value + 1)} label={`Add - ${value}`} />
   )
 
 const TSReact = () => {
@@ -154,6 +178,7 @@ const TSReact = () => {
     }, []);
 
     //22.1 Create an new piece of state of type number
+    //22.9 Change this to useNumber instead of useState. End, a custom hook with all the typing around  it.
     const [value, setValue] = useNumber(0);
 
     return (
@@ -182,7 +207,8 @@ const TSReact = () => {
             ))}
             <div>
               <input type="text" ref={newTodoRef} />
-              <button onClick={onAddTodo}>Add Todo</button>
+              {/* this Button component variant uses default children for instance */}
+              <Button onClick={onAddTodo}>Add Todo</Button>
             </div>
      </div>
   );
