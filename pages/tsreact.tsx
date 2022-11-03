@@ -59,10 +59,10 @@ interface BoxProps {
   <button
     {...rest}
     style={{
-      ...style,
       backgroundColor: "green",
       color: "white",
       fontSize: "xx-large",
+      ...style
     }}
   >
     {label ?? children}
@@ -120,8 +120,8 @@ interface BoxProps {
     // <button onClick={() => setValue(value + 1)}>Add - {value}</button>
     // v2 use of custom Button component, but with children
     // <Button onClick={() => setValue(value + 1)}>Add - {value}</Button>
-    // v3 +SUPERIOR+ using custom prop 'label' instead of consuming children
-    <Button onClick={() => setValue(value + 1)} label={`Add - ${value}`} />
+    // v3 +SUPERIOR+ using custom prop 'label' instead of consuming children, and showing how we can add and override the base style. base is green, here i make it coral
+    <Button onClick={() => setValue(value + 1)} label={`Add - ${value}`} value={value} style={{border: "5px dashed black", backgroundColor: 'coral'}} />
   )
 
 const TSReact = () => {
