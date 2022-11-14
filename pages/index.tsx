@@ -300,6 +300,10 @@ const Index: FC = ({
       <hr />
       <Jumbotron />
       <hr />
+      <Box style={{ width: '300px', color: 'blue', border: '3px solid black', marginLeft: '500px' }}>
+          <h3>Style-Injecto ACME&reg; Box</h3>
+        </Box>
+      <hr />
     </div>
   );
 };
