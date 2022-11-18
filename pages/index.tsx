@@ -41,6 +41,7 @@ import cn from 'classnames'
 import styles from '../src/components/home/home.module.scss'
 import GridCards from '../src/components/grid-cards';
 import Jumbotron from '../src/components/jumbotron';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 type Data = {
   message: string;
@@ -304,6 +305,18 @@ const Index: FC = ({
           <h3>Style-Injecto ACME&reg; Box</h3>
         </Box>
       <hr />
+      <h2>Font Awesome</h2>
+      <span>
+          dd
+          <FontAwesomeIcon
+            className={styles["if-you-had__style"]}
+            icon="arrow-left"
+          />
+          <FontAwesomeIcon icon="book" />
+          <FontAwesomeIcon icon="cog" />
+          <FontAwesomeIcon icon="download" />
+          <FontAwesomeIcon icon="print" />
+        </span>
     </div>
   );
 };
