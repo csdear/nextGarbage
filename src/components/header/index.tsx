@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import { FC } from "react";
 import styles from "./header.module.scss";
+import NavigationLink from '../navigation-link';
+import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-const path = [
-    { uid: 21, name: 'Home', id: 1, path: '/' },
-    { uid: 31, name: 'People', id: 2, path: 'people' },
-    { uid: 41, name: 'tsreact', id: 3, path: 'tsreact' }
+const urlPath = [
+    { uid: 21, name: 'Home', id: 1, path: '/', icon: 'book' },
+    { uid: 31, name: 'People', id: 2, path: 'people', icon: 'download' },
+    { uid: 41, name: 'tsreact', id: 3, path: 'tsreact', icon: 'cog' }
   ];
 
 const Header: FC = () => {
@@ -14,12 +16,17 @@ return (
         <header>
             <nav>
                 <ul>
-                {path.map((value) => {
+                {urlPath.map((link) => {
                     return (
-                    <li key={value.uid}>
-                        <Link href={value.path}>
+                    <li key={link.uid}>
+                        {/* <Link href={value.path}>
                         <a> {value.name} </a>
-                        </Link>
+                        </Link> */}
+                        <NavigationLink
+                            title={link.name}
+                            href={link.path}
+                            icon={link.icon as IconProp}
+                    />
                     </li>
                     );
                 })}

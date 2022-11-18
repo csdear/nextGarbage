@@ -42,6 +42,7 @@ import styles from '../src/components/home/home.module.scss'
 import GridCards from '../src/components/grid-cards';
 import Jumbotron from '../src/components/jumbotron';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import NavigationLink from "../src/components/navigation-link";
 
 type Data = {
   message: string;
@@ -317,6 +318,16 @@ const Index: FC = ({
           <FontAwesomeIcon icon="download" />
           <FontAwesomeIcon icon="print" />
         </span>
+        <br />
+        <br />
+        <div className={styles[""]}>
+          <NavigationLink
+            title={'Go To Your Settings'}
+            href={"/"}
+            icon={"cog"}
+          />
+        </div>
+
     </div>
   );
 };

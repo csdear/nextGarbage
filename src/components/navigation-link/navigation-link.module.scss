@@ -1,0 +1,30 @@
+
+.navigation-link {
+    display: inline-flex;
+    width: 100%;
+    color: grey;
+    font-weight: bold;
+    text-decoration: none;
+    // padding-block: rem(12);
+    // padding-inline: rem(small);
+
+    &__icon {
+        opacity: 0.8;
+        path {
+            fill: blue
+        }
+    }
+
+    & &__icon {
+        // padding-inline-end: rem(small);
+        // inline-size: rem(20);
+    }
+
+    &:hover {
+        text-decoration: underline;
+
+        .navigation-link__icon {
+            opacity: 1;
+        }
+    }
+}
