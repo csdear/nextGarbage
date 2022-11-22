@@ -23,6 +23,7 @@ return (
                         <a> {value.name} </a>
                         </Link> */}
                         <NavigationLink
+                            className= {link.name}
                             title={link.name}
                             href={link.path}
                             icon={link.icon as IconProp}

@@ -1,3 +1,11 @@
+// This is a good component to demonstrate how to
+// overrided the base HTML elements.
+// This is a Navigation Link, a font awesome icon
+// and link.
+// In the interface we are overriding, or rather
+// Extending an anchor <a>
+// See interface interface AnchorHTMLAttributes<T>  within https://unpkg.com/@types/react@16.4.7/index.d.ts
+
 import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 import type { FC } from "react";
 import Link from "next/link";
@@ -24,7 +32,6 @@ const NavigationLink: FC<NavigationLinkProps> = ({
     className: cn(styles["navigation-link"], className),
     ...rest,
   };
-
   return (
     <Link href={href}>
       <a {...linkProps}>
