@@ -43,6 +43,7 @@ import GridCards from '../src/components/grid-cards';
 import Jumbotron from '../src/components/jumbotron';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavigationLink from "../src/components/navigation-link";
+import AdBanner from 'src/components/ad-banner';
 
 type Data = {
   message: string;
@@ -327,6 +328,9 @@ const Index: FC = ({
             icon={"cog"}
           />
         </div>
+        <br />
+        <br />
+        <AdBanner />
 
     </div>
   );
