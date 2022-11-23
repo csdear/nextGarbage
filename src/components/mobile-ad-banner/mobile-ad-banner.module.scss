@@ -1,0 +1,59 @@
+
+
+.mobile-ad-banner {
+    border: solid .1rem grey;
+    width: 60rem;
+    height: 11.25rem;
+    margin: auto;
+    margin-top: 4.25rem;
+    margin-bottom: 6rem;
+    color: grey;
+    border-radius: 0.25rem;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    background-color: #F5F5F5;
+    display: flex;
+
+
+&__right-content {
+    margin-left: auto;
+    order: 2;
+}
+
+&__left-content {
+    margin-left: auto;
+    order: 1;
+}
+
+&__heading {
+    margin-left: 0;
+    display: flex;
+    margin-left: 1.25rem;
+    margin-bottom: 0.3rem;
+    height: 2.0625rem;
+    color: #3D3F42;
+    font-weight: 600;
+    font-family: "Noto Sans";
+    font-size: 1rem;
+}
+
+&__sub-heading {
+    color: #3D3F42;
+    display: flex;
+    margin-top: 1.25rem;
+    margin-left: 1.31rem;
+    font-size: 0.5rem;
+    text-align: left;
+}
+
+&__store-links {
+    display: flex;
+    margin-left: 1.3rem;
+}
+
+&__gplay-store-link {
+    margin-left: 0.3125rem;
+}
+
+}
+

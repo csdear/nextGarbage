@@ -43,8 +43,9 @@ import GridCards from '../src/components/grid-cards';
 import Jumbotron from '../src/components/jumbotron';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavigationLink from "../src/components/navigation-link";
-import AdBanner from 'src/components/ad-banner';
+import AdBanner from 'src/components/mobile-ad-banner';
 import Cornerstone from 'src/components/cornerstone';
+import MobileAdBanner from 'src/components/mobile-ad-banner';
 
 type Data = {
   message: string;
@@ -331,7 +332,7 @@ const Index: FC = ({
         </div>
         <br />
         <br />
-        <AdBanner />
+        <MobileAdBanner />
         <Cornerstone />
 
     </div>
