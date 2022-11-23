@@ -1,3 +1,5 @@
+// Note, this works, but I do prefer our discover.shared.flipster-newsstand-ui's "app-layout" component to this.
+
 import Header from "../header";
 
 import React, { FC, ReactNode  } from "react";
