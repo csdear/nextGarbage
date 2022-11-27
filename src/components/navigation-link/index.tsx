@@ -6,12 +6,19 @@
 // Extending an anchor <a>
 // See interface interface AnchorHTMLAttributes<T>  within https://unpkg.com/@types/react@16.4.7/index.d.ts
 
-import type { IconProp } from "@fortawesome/fontawesome-svg-core";
+
 import type { FC } from "react";
 import Link from "next/link";
+
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconProp } from "@fortawesome/fontawesome-svg-core";
+import "../../services/font-awesome"; // FA bug - navigation-link component not having access to font awesome icon.. wont even render int the standard way.  
+// Odd navigation LInk called from pages index.tsx works, but navigation link called from header does not... "could not find icon"
+
 import cn from "classnames";
 import styles from "./navigation-link.module.scss";
+
 
 interface NavigationLinkProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -32,16 +39,22 @@ const NavigationLink: FC<NavigationLinkProps> = ({
     className: cn(styles["navigation-link"], className),
     ...rest,
   };
+  console.log('icon', icon);
   return (
     <Link href={href}>
+      
       <a {...linkProps}>
+      {/* baz
+      <FontAwesomeIcon icon="cog" />
+      foo */}
         {icon && (
           <FontAwesomeIcon
             className={cn("fa-fw", styles["navigation-link__icon"])}
             icon={icon as IconProp}
           />
         )}
-        {title}
+        {title}|NAVLINK|
+        
       </a>
     </Link>
   );

@@ -334,6 +334,11 @@ const Index: FC = ({
         <br />
         <MobileAdBanner />
         <Cornerstone />
+        <NavigationLink
+              title={'|PAGESW|'}
+              href={'/'}
+              icon={'download'}
+      />
 
     </div>
   );

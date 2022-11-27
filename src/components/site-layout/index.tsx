@@ -5,6 +5,7 @@ import Header from "../header";
 import React, { FC, ReactNode  } from "react";
 import styles from "./site-layout.module.scss";
 
+
 interface SiteLayoutProps {
     children: ReactNode;
 }

@@ -2,7 +2,11 @@ import Link from 'next/link';
 import { FC } from "react";
 import styles from "./header.module.scss";
 import NavigationLink from '../navigation-link';
+
 import type { IconProp } from "@fortawesome/fontawesome-svg-core";
+// import "../../services/font-awesome"; // FA bug
+// THIS RENDERS 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const urlPath = [
     { uid: 21, name: 'Home', id: 1, path: '/', icon: 'book' },
@@ -22,11 +26,14 @@ return (
                         {/* <Link href={value.path}>
                         <a> {value.name} </a>
                         </Link> */}
+                        {/* <FontAwesomeIcon icon="cog" /> */}
+
                         <NavigationLink
                             className= {link.name}
                             title={link.name}
                             href={link.path}
-                            icon={link.icon as IconProp}
+                            // icon={link.icon as IconProp}
+                            icon={"download"}
                     />
                     </li>
                     );
