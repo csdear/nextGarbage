@@ -5,7 +5,7 @@ import NavigationLink from '../navigation-link';
 
 import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 // import "../../services/font-awesome"; // FA bug
-// THIS RENDERS 
+// THIS RENDERS
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const urlPath = [
@@ -32,8 +32,9 @@ return (
                             className= {link.name}
                             title={link.name}
                             href={link.path}
-                            // icon={link.icon as IconProp}
-                            icon={"download"}
+                            icon={link.icon as IconProp}
+                            // cannot find cog? ^
+                            //test: icon={"book"}
                     />
                     </li>
                     );

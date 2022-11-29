@@ -13,7 +13,7 @@ import Link from "next/link";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { IconProp } from "@fortawesome/fontawesome-svg-core";
-import "../../services/font-awesome"; // FA bug - navigation-link component not having access to font awesome icon.. wont even render int the standard way.  
+import "../../services/font-awesome" // FA bug - navigation-link component not having access to font awesome icon.. wont even render int the standard way.
 // Odd navigation LInk called from pages index.tsx works, but navigation link called from header does not... "could not find icon"
 
 import cn from "classnames";
@@ -39,25 +39,31 @@ const NavigationLink: FC<NavigationLinkProps> = ({
     className: cn(styles["navigation-link"], className),
     ...rest,
   };
-  console.log('icon', icon);
+  console.log('ICON RECD : ', icon);
   return (
     <Link href={href}>
-      
       <a {...linkProps}>
-      {/* baz
-      <FontAwesomeIcon icon="cog" />
-      foo */}
-        {icon && (
+          <div>&nbsp;
           <FontAwesomeIcon
             className={cn("fa-fw", styles["navigation-link__icon"])}
             icon={icon as IconProp}
           />
-        )}
-        {title}|NAVLINK|
-        
+          </div>
+
+        {title}
       </a>
     </Link>
   );
 };
 
 export default NavigationLink;
+
+{/* Next lines are test -- I cannot get eve a simple FontAwesomeIcon to display
+      Why does this component not have  access to font awesome dep?
+      Odd though if I plug in 'y u no load?' right before on line 52, it works!
+      */}
+      {/* <FontAwesomeIcon icon="cog" />
+      <FontAwesomeIcon icon="book" />
+      <FontAwesomeIcon icon="cog" />
+      <FontAwesomeIcon icon="download" />
+      <FontAwesomeIcon icon="print" /> */}
