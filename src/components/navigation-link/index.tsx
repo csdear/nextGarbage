@@ -47,6 +47,7 @@ const NavigationLink: FC<NavigationLinkProps> = ({
           <FontAwesomeIcon
             className={cn("fa-fw", styles["navigation-link__icon"])}
             icon={icon as IconProp}
+            style={{ width: '25px', height: '25px'}}
           />
           </div>
 

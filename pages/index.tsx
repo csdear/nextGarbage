@@ -310,35 +310,22 @@ const Index: FC = ({
         </Box>
       <hr />
       <h2>Font Awesome</h2>
-      <span>
-          dd
-          <FontAwesomeIcon
-            className={styles["if-you-had__style"]}
-            icon="arrow-left"
-          />
-          <FontAwesomeIcon icon="book" />
-          <FontAwesomeIcon icon="cog" />
-          <FontAwesomeIcon icon="download" />
-          <FontAwesomeIcon icon="print" />
-        </span>
+
+          <FontAwesomeIcon style={{ width: '25px', height: '25px'}} icon="book" />
+
         <br />
         <br />
-        <div className={styles[""]}>
-          <NavigationLink
+          {/* <NavigationLink
             title={'Go To Your Settings'}
             href={"/"}
             icon={"cog"}
-          />
-        </div>
+          /> */}
+
         <br />
         <br />
         <MobileAdBanner />
         <Cornerstone />
-        <NavigationLink
-              title={'|PAGESW|'}
-              href={'/'}
-              icon={'download'}
-      />
+
 
     </div>
   );

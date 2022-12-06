@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
+    "target": "es5",
     "baseUrl": ".",
     "paths"  : {
       "@services/*": ["./src/services/*"]
     },
-    "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",

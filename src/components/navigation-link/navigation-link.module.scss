@@ -5,30 +5,35 @@
     color: grey;
     font-weight: bold;
     text-decoration: none;
-    // padding-block: rem(12);
-    // padding-inline: rem(small);
+    padding-block: rem(12);
+    padding-inline: rem(42);
 
     &__icon {
 
         opacity: 0.8;
         path {
-            fill: red
+            fill: grey;
         }
+        // background-color: red;
     }
 
-
+    // not convinced this works...
     & &__icon {
-
-        // padding-inline-end: rem(small);
-        // inline-size: rem(20);
-        padding-inline-end: 2px;
+        // background-color: blue;
+        padding-inline-end: rem(42);
+        inline-size: rem(42);  //?
+        padding-inline-end: 6px;
         inline-size: 2px;
+
     }
 
 
     &:hover {
-        text-decoration: underline;
-
+        // text-decoration: underline;
+        border-bottom: 3px red solid;
+        border-top: 3px red solid;
+        border-radius: 6px;
+        border
         .navigation-link__icon {
             opacity: 1;
         }
