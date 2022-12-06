@@ -10,3 +10,44 @@
   max-width: 800px;
   }
 }
+
+.home-svg {  // pretend i am a phone!
+  width: 100%;
+  max-width: 450px;
+  height: 90vh;
+  border: 10px solid blue;
+  margin: 5vh auto;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  color: #f6f6f6;
+  background-color: #121212;
+
+  &__header {
+    border: 1px dashed coral;
+    padding: 15px;
+    background-color: #222327;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 65px;
+  }
+}
+
+
+
+.home-svg svg{
+  width: 30px;
+  height: 30px;
+  fill: greenyellow;
+
+
+}
+.home-svg h2
+    {
+      color: greenyellow;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
+      Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+     line-height: 1.4;
+
+   }
