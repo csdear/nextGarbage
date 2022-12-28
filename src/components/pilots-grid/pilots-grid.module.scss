@@ -1,0 +1,90 @@
+$fixed-image-height: 200px;
+$fixed-image-width: 200px;
+
+.pilots-grid { // ~"cards"
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    max-width: 800px; // To demo wrapping to next line.
+    border: 1px red dashed;
+}
+
+.pilots-grid-item { // ~"card"
+  // border: 5px red dashed;
+  display: inline-block; // was block
+  flex: 0 0 200px; //!
+  margin: 10px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  margin-block-end: 20px; // rem(20). after each item, the spacing.
+
+  &:hover {
+    color: blue;
+    img {
+       box-shadow: 0.5px 2px 4px 0 red
+    }
+    .pilots-grid-item-name {
+      text-decoration: underline;
+    }
+  }
+
+  &:focus-visible {
+    .pilots-grid-item-name {
+      text-decoration: underline;
+    }
+  }
+
+  &-info {
+    // border: coral solid 5px;
+    // info section, pilot name and faction
+    font-weight: inherit;
+    text-align: left;
+    color: inherit;
+    text-decoration: none;
+    max-inline-size: $fixed-image-width;
+    line-height: 19px;
+    margin-block-start: 20px; //rem(5)
+  }
+
+  &-name {
+    font-size: 18px;
+    color: blue;
+    margin: 0;
+    padding: 0 20px 20px;
+    // display: inline-block;
+
+  }
+  &-faction {
+    color: grey;
+    margin: 0;
+    font-size: 18px;
+    padding: 0 20px 20px;
+  }
+  img {
+    inline-size: $fixed-image-width;
+    block-size: $fixed-image-height;
+    max-inline-size: $fixed-image-width;
+    max-block-size: $fixed-image-height;
+    min-block-size: $fixed-image-height;
+    border: solid 1px grey;
+    box-shadow: 0.5px 2px 4px 0 rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease-in-out 0s;
+    border-radius: 3px;
+    background-color: grey;
+  }
+
+  button {
+    background: gray;
+    border: 0;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    margin-inline-start: 1px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+  }
+}
