@@ -1,3 +1,5 @@
+// the useTodos handles all the LOGIC for todo, adding, removing etc.
+// for this state machine
 import { useCallback, useReducer } from "react";
 
 type ActionType =
