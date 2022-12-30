@@ -98,6 +98,7 @@ const TSReactGenericComponent = () => {
       />
       <div>
         <input type="text" ref={newTodoRef} />
+        {/* Example demo using inline style aggregation and a title nullish.... <Button style={{ border: '3px dashed blue'}} title='BLAH' onClick={onAddTodo}>Add Todo</Button> */}
         <Button onClick={onAddTodo}>Add Todo</Button>
       </div>
     </div>
