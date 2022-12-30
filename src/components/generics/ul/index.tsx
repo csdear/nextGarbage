@@ -15,6 +15,8 @@ import styles from "./ul.module.scss";
 // simply doing for render() and itemClick item: item seems to cause no  fuss.
 // borrowing hard from navigation-link
 // I have no use for  ...rest at the moment. But something to look into.
+// At stasis now, lets try to use within the tsxreactCustom page...<?>
+ 
 
 interface item {
     id: number;
