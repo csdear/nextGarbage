@@ -15,6 +15,8 @@ import styles from "./ul.module.scss";
 // simply doing for render() and itemClick item: item seems to cause no  fuss.
 // borrowing hard from navigation-link
 // I have no use for  ...rest at the moment. But something to look into.
+// At stasis now, lets try to use within the tsxreactCustom page...<?>
+
 
 interface item {
     id: number;
@@ -32,10 +34,18 @@ interface ULProps
 const UL: FC<ULProps> = ({
     items,
     render,
-    itemClick
+    itemClick,
+    ...rest
  }) => {
-    return (
-    <ul>
+        return (
+    <ul {...rest}
+      // style={{color: "red"}}
+      className={styles["genUL"]}
+      aria-label= "test"
+      data-id="747"
+      draggable={true}
+      role="list"
+    >
       {items.map((item, index) => (
         <li onClick={() => itemClick(item)} key={index}>
           {render(item)}
