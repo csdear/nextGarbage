@@ -139,6 +139,16 @@ const Index: FC = ({
       </Link>
       |-------|
       <Hello />
+      <h2>More internal garbage LINKS</h2>
+      <Link href="/tsreactGenericComponent">
+        <a>ts+react Generic Component (UL)</a>
+      </Link><br />
+      <Link href="/tsreactCustomHook">
+        <a>ts+react Custom Hook</a>
+      </Link><br />
+      <Link href="/tsreactUseContext">
+        <a>ts+react useContext</a>
+      </Link><br />
       <h2>List of Films</h2>
       {Object.entries(swapis?.result || {}).map(([key, value]) => (
         <ul key={key}>
