@@ -46,7 +46,7 @@ const UL: FC<ULProps> = ({
       draggable={true}
       role="list"
     >
-      {items.map((item, index) => (
+      {items?.map((item, index) => (
         <li onClick={() => itemClick(item)} key={index}>
           {render(item)}
         </li>

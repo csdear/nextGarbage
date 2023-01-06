@@ -141,10 +141,10 @@ const Index: FC = ({
       <Hello />
       <h2>More internal garbage LINKS</h2>
       <Link href="/tsreactGenericComponent">
-        <a>ts+react Generic Component (UL)</a>
+        <s><a>ts+react Generic Component (UL)</a></s>
       </Link><br />
       <Link href="/tsreactCustomHook">
-        <a>ts+react Custom Hook</a>
+        <s><a>ts+react Custom Hook</a></s>
       </Link><br />
       <Link href="/tsreactUseContext">
         <a>ts+react useContext</a>
