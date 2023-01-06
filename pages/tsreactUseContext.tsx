@@ -127,6 +127,34 @@ const TSReactUseContext = () => {
   ])
 */
 
+/**24.14 : Refinement. function just show todos...
+ * Reuse that <UL> gen component
+ * Removing the remove  button from  instance
+ * Make itemClick simpler.
+  */
+
+const JustShowTodos = () => {
+  const todos = useTodos();
+  return (
+    <UL
+        items={todos}
+        // itemClick={(item) => alert(item.id)}
+        itemClick={() => {}}
+        render={(todo) => <>{todo.text}</>
+          // (
+          // <>
+          //   {todo.text}
+          //   <button onClick={() => removeTodo(todo.id)}>Remove</button>
+          // </>
+          // )
+      }
+      />
+  )
+}
+/** 24.15 : Then we can replace the second app with JustShowTodos
+ *  Demonstrates we can have two  separate components that observe
+ * the same state data source.
+ */
 const AppWrapper = () => (
     <TodosProvider initialTodos={[
       { id: 0, text: "A useContext todo", done: false },
@@ -138,7 +166,8 @@ const AppWrapper = () => (
       }}
     >
       <TSReactUseContext></TSReactUseContext>
-      <TSReactUseContext></TSReactUseContext>
+      <JustShowTodos />
+      {/* <TSReactUseContext></TSReactUseContext> */}
     </div>
     </TodosProvider>
 );
