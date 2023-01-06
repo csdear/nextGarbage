@@ -27,7 +27,7 @@
      */
         const [todos, setTodos] = useGlobalTodos();
 
-        /** To handle initialTodos to set it up we use useEffect */
+    /** 26.7 To handle initialTodos to set it up we use useEffect */
     useEffect(() => {
         setTodos(initialTodos);
     }, [initialTodos, setTodos]);
