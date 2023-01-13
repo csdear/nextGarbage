@@ -108,7 +108,7 @@ const Index: FC = ({
     [styles.btn__active]: isActive,
 })
 
-
+const API_URL = 'https://api.example.com/';
 
   return (
     <div>
@@ -361,6 +361,13 @@ const Index: FC = ({
           </svg>
         </header>
         </div>
+    <hr></hr>
+    <div><h1>URLcat</h1>
+    {API_URL}
+
+
+    </div>
+    {/*  the end */}
     </div>
   );
 };
