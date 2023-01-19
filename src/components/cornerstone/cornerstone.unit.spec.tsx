@@ -7,6 +7,6 @@ import Cornerstone from "../cornerstone";
 describe("Cornerstone", () => {
   it("should render Cornerstone", () => {
     render(<Cornerstone />);
-    screen.getByTestId("cornerstone");
+    expect(screen.getByTestId("cornerstone")).toBeInTheDocument();
   });
 });
