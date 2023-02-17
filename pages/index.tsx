@@ -48,6 +48,7 @@ import AdBanner from 'src/components/mobile-ad-banner';
 import Cornerstone from 'src/components/cornerstone';
 import MobileAdBanner from 'src/components/mobile-ad-banner';
 import Driver from 'src/components/driver';
+import Cornerstone2 from 'src/components/cornerstone2';
 
 type Data = {
   message: string;
@@ -368,6 +369,7 @@ const API_URL = 'https://api.example.com/';
     {API_URL}
     </div>
     <Driver data={'1/19/1999'}/>
+    <Cornerstone2 />
     {/*  the end */}
     </div>
   );
