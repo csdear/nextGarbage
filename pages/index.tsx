@@ -1,3 +1,4 @@
+// MOTHER
 import { FC, useState, useEffect } from 'react';
 import { InferGetStaticPropsType, GetStaticProps } from "next";
 import Link from 'next/link';
@@ -46,6 +47,7 @@ import NavigationLink from "../src/components/navigation-link";
 import AdBanner from 'src/components/mobile-ad-banner';
 import Cornerstone from 'src/components/cornerstone';
 import MobileAdBanner from 'src/components/mobile-ad-banner';
+import Driver from 'src/components/driver';
 
 type Data = {
   message: string;
@@ -364,9 +366,8 @@ const API_URL = 'https://api.example.com/';
     <hr></hr>
     <div><h1>URLcat</h1>
     {API_URL}
-
-
     </div>
+    <Driver data={'1/19/1999'}/>
     {/*  the end */}
     </div>
   );
