@@ -6,7 +6,7 @@ interface DriverProps {
 }
 
 const Driver: FC<DriverProps> = ({ data }) => {
-
+    // internal sidecar component
     const Sidecar: FC<{ children: React.ReactNode, label: string }> = ({ children, label }) => {
     return (
         <li>
@@ -22,7 +22,7 @@ return (
 <div className={styles["driver"]} data-testid={"driver"}>
     <hr />
     <div className={styles["driver__content"]}>
-    <h1>Driver</h1>
+    <h1>Driver & Sidecar Design</h1>
     <ul className={styles["driver__list"]}>
     {!!data && (
         <Sidecar label="License Date:">

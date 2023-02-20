@@ -1,7 +1,15 @@
 .cards {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
+
+    &__header {
+        color:orange;
+    }
+
+    &__items-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
 }
 
 .card {
