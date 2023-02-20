@@ -25,7 +25,8 @@ const Orange76GridCard: FC<Orange76GridCardProps> = ({ title, description, butto
 const Orange76Grid: React.FC = () => {
   return (
     <div className={styles["cards"]}>
-      <h3>Orange76 Display Grid</h3>
+      <h3 className={styles["cards__header"]}>Orange76 Display Grid</h3>
+      <div className={styles["cards__items-wrapper"]}>
       <Orange76GridCard
         title="Seamlessly visualize quality"
         description="Collaboratively administrate empowered markets via plug-and-play networks."
@@ -68,6 +69,7 @@ const Orange76Grid: React.FC = () => {
         imageUrl="/static/16l.jpg"
         imageAlt="Sample photo"
       />
+      </div>
     </div>
   );
 };

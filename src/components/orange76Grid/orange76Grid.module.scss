@@ -1,25 +1,52 @@
+
+//$fixed-image-height: rem(212);
+//$fixed-image-width: rem(159);
+// REM PROBLEMS IN  NEXTGARBAGE... FOR SOME REASON MY PROJECT DOES NOT RESPECT  REM FUNCTIONS LIKE REM(159)
+$fixed-image-height: 212px;
+$fixed-image-width: 220px;
+
+
 .cards {
-    display: grid;
+
     // flex-wrap: wrap;
     // align-items: stretch;
+
+
     inline-size: 100%;
-    //adjust to  space-around for mobile  views justify-content: space-around;
-    justify-content: space-between;
-    justify-items: center;
-    grid-auto-flow: dense row;
-    grid-gap: rem(12);
+
+    &__header {
+        color: green;
+    }
+
+    &__items-wrapper {
+        display: grid;
+        inline-size: 100%;
+        grid-template-columns: repeat(auto-fit, 162px);
+        justify-content: space-between;
+        //adjust to  space-around for mobile  views
+        // justify-content: space-around;
+        justify-items: center;
+        grid-auto-flow: dense row;
+        grid-gap: 12px;
+    }
 }
 
 .card {
     // flex: 0 0 200px;
     // margin: 10px;
     display: block;
+    text-decoration: none;
     margin-block-end: 2px;
     border: 1px solid #ccc;
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
 
     &__img {
-        max-width: 100%;
+        border: red 3px solid;
+        inline-size: $fixed-image-width;
+        block-size: $fixed-image-height;
+        max-inline-size: $fixed-image-width;
+        max-block-size: $fixed-image-height;
+        min-block-size: $fixed-image-height;
     }
     &__text {
     padding: 0 20px 20px;
