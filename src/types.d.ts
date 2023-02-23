@@ -2,7 +2,7 @@
  * global types.
  * Use in the Images and Simple list at time of writing this.
  * LIT0: "Lists in typescript"
- * Next see LIT1: 
+ * Next see LIT1:
  */
 
 // Images and Image
@@ -19,8 +19,8 @@ interface IImage {
   interface ImageList {
     images: IImage[];
   }
-  
-  
+
+
 
   // ListItems and listItem
  interface IListItem {
@@ -35,4 +35,5 @@ interface SimpleListItem {
 interface SimpleList {
   listItems: IListItem[];
 }
+
 

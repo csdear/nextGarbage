@@ -51,6 +51,8 @@ import Driver from 'src/components/driver';
 import Cornerstone2 from 'src/components/cornerstone2';
 import Orange76 from 'src/components/orange76';
 import Orange76Grid from 'src/components/orange76Grid';
+import RedError from 'src/components/red-error';
+import BlueError from 'src/components/blue-error';
 
 type Data = {
   message: string;
@@ -114,6 +116,7 @@ const Index: FC = ({
 })
 
 const API_URL = 'https://api.example.com/';
+const isError = true;
 
   return (
     <div>
@@ -375,6 +378,14 @@ const API_URL = 'https://api.example.com/';
     <Orange76 />
     <hr />
     <Orange76Grid />
+    <hr />
+    <h3>Errors.</h3>
+    { isError && (
+      <>
+        <RedError />
+        <BlueError />
+      </>
+      )}
     {/*  the end */}
     </div>
   );
