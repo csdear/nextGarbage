@@ -53,6 +53,7 @@ import Orange76 from 'src/components/orange76';
 import Orange76Grid from 'src/components/orange76Grid';
 import RedError from 'src/components/red-error';
 import BlueError from 'src/components/blue-error';
+import ContentContainer from 'src/components/content-container';
 
 type Data = {
   message: string;
@@ -386,6 +387,16 @@ const isError = true;
         <BlueError />
       </>
       )}
+    <hr />
+    <ContentContainer>
+      <h2>Some Content.</h2>
+    </ContentContainer>
+    <ContentContainer gray>
+      <h2>Some More Content.</h2>
+    </ContentContainer>
+    <ContentContainer red>
+      <h2>Even More Content.</h2>
+    </ContentContainer>
     {/*  the end */}
     </div>
   );
