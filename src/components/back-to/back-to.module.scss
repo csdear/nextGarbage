@@ -1,0 +1,44 @@
+
+.back-to {
+    white-space: nowrap;
+    margin-block-end: 2rem;
+
+    margin-block-start: .5rem;
+    // margin-block-start: 1rem;
+
+    // @include breakpoint($tablet-sm) {
+    // margin-block-start: rem(9);
+    // }
+
+    &__link {
+        border-radius: 0.25rem;
+        color: lightblue;
+        text-decoration: none;
+
+        &:hover {
+        text-decoration: underline;
+        text-decoration-style: dotted;
+        text-underline-position: under;
+        }
+
+        &:active {
+        color: blue;
+        text-decoration: underline;
+        text-decoration-style: dotted;
+        text-underline-position: under;
+        }
+    }
+
+    &__icon {
+        inline-size: 1rem;
+        block-size: 1rem;
+        padding-inline-end: 0.875rem;
+        color: grey;
+    }
+
+    &__message {
+        font-size: 0.875rem;
+        line-height: 1.1875rem;
+        text-decoration: none;
+    }
+    }

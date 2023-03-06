@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { InferGetStaticPropsType, GetStaticProps } from "next";
 import { FC, useState, useEffect } from 'react';
+import BackTo from 'src/components/back-to';
 
 // FC+TS+GETSTATICPROPS+RENDER LIST
 
@@ -74,6 +75,7 @@ const People: FC = ({ people }: InferGetStaticPropsType<typeof getStaticProps>) 
         <Link href="/">
           <a>Back to home</a>
         </Link>
+      <BackTo />
       </h2>
     </div>
 

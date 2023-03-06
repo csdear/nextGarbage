@@ -54,6 +54,7 @@ import Orange76Grid from 'src/components/orange76Grid';
 import RedError from 'src/components/red-error';
 import BlueError from 'src/components/blue-error';
 import ContentContainer from 'src/components/content-container';
+import BackTo from 'src/components/back-to';
 
 type Data = {
   message: string;
@@ -392,11 +393,14 @@ const isError = true;
       <h2>Some Content.</h2>
     </ContentContainer>
     <ContentContainer gray>
-      <h2>Some More Content.</h2>
+      <h2>Classic Gray Full Width.</h2>
     </ContentContainer>
     <ContentContainer red>
       <h2>Even More Content.</h2>
     </ContentContainer>
+    <hr />
+    <BackTo />
+    <hr />
     {/*  the end */}
     </div>
   );
