@@ -1,0 +1,39 @@
+$breakpoint: 750px;
+
+// inversion of implementation seen on  jumbotron.module.scss...this is a  mobile first.
+@mixin xor {
+    @media (min-width: #{$breakpoint}) {
+        @content;
+    }
+}
+
+.acme-button {
+    &__link {  //mobile first
+        padding-block: 0;
+        padding-inline: 16px;
+        margin: 10px;
+        color: #3e76d0;
+        background-color: whitesmoke;
+        line-height: 44px;
+        font-size: 16px;
+        text-align: center;
+        inline-size: 95%;
+
+        @include xor {  //desktop. 750 and dbove
+            background-color: blueviolet;
+            color:white;
+            inline-size: inherit;
+            line-height: 36px;
+            font-size: 14px;
+        }
+        // @include breakpoint(750px) {
+        //     line-height: 36px;
+        //     font-size: 14px;
+        // }
+
+        // &-icon {
+        //     padding-inline-end: 2px;
+        //     inline-size: 14px;
+        // }
+    }
+}
