@@ -55,6 +55,9 @@ import RedError from 'src/components/red-error';
 import BlueError from 'src/components/blue-error';
 import ContentContainer from 'src/components/content-container';
 import BackTo from 'src/components/back-to';
+import ActiveLink from 'src/components/router-things';
+import AcmeButton from 'src/components/acme-button';
+import Accordion from 'src/components/accordion';
 
 type Data = {
   message: string;
@@ -399,9 +402,23 @@ const isError = true;
       <h2>Even More Content.</h2>
     </ContentContainer>
     <hr />
-    <BackTo />
+    {/* <BackTo /> */}
+    <ActiveLink href="http://www.google.com" >
+      <p>GOOGLE IT</p>
+    </ActiveLink>
+    <ActiveLink href="/" >
+      <p>HOME</p>
+    </ActiveLink>
     <hr />
+    <AcmeButton
+            identificationNumber={'42'}
+            className={'zoo'}
+            someName={"Bob"}
+    />
+    <hr />
+    <Accordion title='test' content='Here is the content' />
     {/*  the end */}
+
     </div>
   );
 };

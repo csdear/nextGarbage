@@ -1,0 +1,78 @@
+.accordion {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.4;
+    background: #fff;
+    color: #444;
+
+    &__container {
+        max-width: 600px;
+        margin: 6rem auto 4rem;
+        padding: 0 10px;
+
+    }
+
+    &__header {
+        color: purple;
+        font-size: 23px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    &__list {
+        // color: red;
+        // list-style: none;
+    }
+
+    &__list-item {
+        list-style: none;
+        // border: red 3px solid;
+        border-top: 1px solid #9f9f9f;
+
+
+    }
+
+    &__list-button {
+        font-size: 16px;
+        background-color: #008593;
+        color: #fff;
+        text-align: left;
+        font-weight: 700;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 8px;
+        cursor: pointer;
+        border: none;
+
+        &--active {
+            background-color: #105057;
+        }
+    }
+
+    &__list-control {
+        font-size: 20px;
+    }
+
+    &__list-answer-wrapper {
+        height: 0;
+        overflow: hidden;
+        // border: 5px red solid;
+        transition: height ease 0.2s;
+
+        &--open {
+            height: auto;
+            // height: 100px;
+        }
+    }
+
+    &__list-answer {
+        background-color: #f7f7f7;
+        padding: 20px;
+    }
+
+}
