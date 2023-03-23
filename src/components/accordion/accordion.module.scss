@@ -1,3 +1,4 @@
+
 .accordion {
     box-sizing: border-box;
     margin: 0;
@@ -6,6 +7,8 @@
     line-height: 1.4;
     background: #fff;
     color: #444;
+
+
 
     &__container {
         max-width: 600px;
@@ -61,18 +64,11 @@
     &__list-answer-wrapper {
         height: 0;
         overflow: hidden;
-        // border: 5px red solid;
-        transition: height ease 0.2s;
-
-        &--open {
-            height: auto;
-            // height: 100px;
-        }
+        transition: height ease 1s;
     }
 
     &__list-answer {
         background-color: #f7f7f7;
         padding: 20px;
     }
-
 }

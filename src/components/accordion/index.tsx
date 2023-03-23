@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useRef } from "react";
 import styles from "src/components/accordion/accordion.module.scss";
 import faqData from "public/faqData.json";
 import cn from "classnames";
@@ -17,18 +17,29 @@ const Header = () => {
     )
 };
 
+//WOT. Wow. const contentEl = useRef();
+
 //sidecar
 const AccordionItem = ({ faq, onToggle, active }) => {  //... onToggle a fn() prop rec'd. active if t or f.
     const { question, answer } = faq;
-        return (
+    const contentEl = useRef<HTMLDivElement>(null);
+    return (
             // <li className={styles["accordion__list-item"]}>
             <li className={styles["accordion__list-item"]}> {/* if active append style... */}
                 <button className={cn(styles["accordion__list-button"], active && styles["accordion__list-button--active"])} onClick={onToggle}> {/* onToggle() prop bound to onClick */}
                     {question}
                     <span className={styles["accordion__list-control"]}>{active ? "—" : "+"}</span>
                 </button>
-                <div className={cn(styles["accordion__list-answer-wrapper"], active && styles["accordion__list-answer-wrapper--open"])}>
-                    <div className={styles["accordion__list-answer"]}>{answer}xxx</div>
+                {/*DEP cn "open" class re: ref={}.  <div className={cn(styles["accordion__list-answer-wrapper"], active && styles["accordion__list-answer-wrapper--open"])}></div> */}
+                <div
+                    ref={contentEl}
+                    className={styles["accordion__list-answer-wrapper"]}
+                    style={
+                        active
+                            ? { height: contentEl.current.scrollHeight }
+                            : { height: "0px" }
+}>
+                    <div className={styles["accordion__list-answer"]}>{answer}</div>
                 </div>
             </li>
         );
