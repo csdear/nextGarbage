@@ -36,7 +36,7 @@ const AccordionItem = ({ faq, onToggle, active }) => {  //... onToggle a fn() pr
                     className={styles["accordion__list-answer-wrapper"]}
                     style={
                         active
-                            ? { height: contentEl.current.scrollHeight }
+                            ? { height: contentEl.current?.scrollHeight }
                             : { height: "0px" }
 }>
                     <div className={styles["accordion__list-answer"]}>{answer}</div>
