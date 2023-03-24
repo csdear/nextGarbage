@@ -2,7 +2,8 @@ import React, { FC, useState, useRef } from "react";
 import styles from "src/components/accordion/accordion.module.scss";
 import faqData from "public/faqData.json";
 import cn from "classnames";
-
+//REF : https://blog.logrocket.com/how-to-build-a-react-accordion-menu-from-scratch/
+// Also includes multiple open at once style in that link^
 interface AccordionProps {
     title: string;
     content: string;

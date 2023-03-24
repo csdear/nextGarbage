@@ -58,6 +58,7 @@ import BackTo from 'src/components/back-to';
 import ActiveLink from 'src/components/router-things';
 import AcmeButton from 'src/components/acme-button';
 import Accordion from 'src/components/accordion';
+import CategoriesList from 'src/components/categories-list';
 
 type Data = {
   message: string;
@@ -418,7 +419,10 @@ const isError = true;
     <hr />
     <Accordion title='test' content='Here is the content' />
     {/*  the end */}
-
+    <hr />
+    <ContentContainer gray>
+        <CategoriesList />
+      </ContentContainer>
     </div>
   );
 };
