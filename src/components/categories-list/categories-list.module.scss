@@ -5,6 +5,8 @@
     flex-wrap: wrap;
     align-items: stretch;
     margin-block: 16px;
+    border: 2px grey dashed;
+    width: 50%;
 
     &__header {
         // @include acme-co-zero-margins-padding();
@@ -18,7 +20,8 @@
     &__category-link {
         // @include acme-co-get-link-style($acme-co-button-pill);
         // PILL Style here
-        border: none;
+        // border: none;
+        border: blue 1px solid;
         text-align: center;
         text-decoration: none;
         display: inline-block;
@@ -26,9 +29,12 @@
         padding: 16px;
         margin: 8px;
         color: #3e76d0;
-        background-color: white;
+        background-color: lightblue;
 
-        &:hover {}
+        &:hover {
+            cursor: pointer;
+            color: white;
+        }
 
     }
 }
