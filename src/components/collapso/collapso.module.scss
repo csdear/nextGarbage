@@ -1,0 +1,13 @@
+
+.collapso {
+    // border: 1px dashed grey;
+    padding: 1rem;
+    border-bottom: 5px solid grey;
+    display: flex;
+    justify-content: space-between;
+
+    &__container {
+            font-weight: bold;
+    }
+
+    }
