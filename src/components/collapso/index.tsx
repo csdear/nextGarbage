@@ -36,12 +36,11 @@ return (
                     ) : (
                         <FontAwesomeIcon style={{ width: '10px', height: '10px'}} icon="chevron-up" />
                     )}
-
                 </button>
+                <div>{isOpen && <div className={styles["collapso__content-children"]}>{children}</div>}</div>
             </div>
 
         </div>
-
     </div>
 );
 };
