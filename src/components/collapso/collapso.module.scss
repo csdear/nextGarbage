@@ -17,11 +17,14 @@
         }
 
     &__header {
-        color: red;
         display: flex;
         justify-content: space-between;
         padding: 2px 20px 2px 20px;
         border-bottom: 1px solid #dee2e6 !important;
+
+    &--title {
+        color: green;
+    };
     }
 
     }
