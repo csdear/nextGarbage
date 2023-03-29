@@ -27,18 +27,17 @@ return (
         <div className={styles["collapso__container"]}>
             <div className={styles["collapso__header"]} data-testid={"collapso-header"}>
                 <h6 className={styles["collapso__header--title"]}>{title}</h6>
-                <button type="button" className="btn" onClick={handleFilterOpening}>
+                <button type="button" className={styles["collapso__header--button"]} onClick={handleFilterOpening}>
                     {!isOpen ? (
-                    // <FontAwesomeIcon icon={faChevronDown} />
-                    <FontAwesomeIcon style={{ width: '10px', height: '10px'}} icon="chevron-down" />
+                        // <FontAwesomeIcon icon={faChevronDown} />
+                        <FontAwesomeIcon style={{ width: '10px', height: '10px'}} icon="chevron-down" />
                     ) : (
                         <FontAwesomeIcon style={{ width: '10px', height: '10px'}} icon="chevron-up" />
                     )}
                 </button>
             </div>
             <div className={styles["collapso__content"]} data-testid={"collapso-content"}>
-
-                <div>{isOpen && <div className={styles["collapso__content-children"]}>{children}</div>}</div>
+                <div>{isOpen && <div className={styles["collapso__content--children"]}>{children}</div>}</div>
             </div>
 
         </div>
