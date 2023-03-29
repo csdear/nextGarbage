@@ -12,7 +12,6 @@ interface CollapsoProps {
     open?: boolean;
     title: string;
     children: ReactNode;
-    icon?: IconProp;
 }
 
 
@@ -32,9 +31,10 @@ return (
             <div className={styles["collapso__content"]} data-testid={"collapso-content"}>
                 <button type="button" className="btn" onClick={handleFilterOpening}>
                     {!isOpen ? (
-                    <FontAwesomeIcon icon={faChevronDown} />
+                    // <FontAwesomeIcon icon={faChevronDown} />
+                    <FontAwesomeIcon style={{ width: '10px', height: '10px'}} icon="chevron-down" />
                     ) : (
-                    <FontAwesomeIcon icon={faChevronUp} />
+                        <FontAwesomeIcon style={{ width: '10px', height: '10px'}} icon="chevron-up" />
                     )}
 
                 </button>
