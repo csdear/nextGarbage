@@ -3,6 +3,8 @@ import {
   faArrowLeft,
   faBook,
   faDownload,
+  faChevronUp,
+  faChevronDown,
   faChevronLeft,
   faChevronRight,
   faCog,
@@ -15,6 +17,8 @@ import {
 library.add(
   faArrowLeft,
   faBook,
+  faChevronUp,
+  faChevronDown,
   faChevronLeft,
   faChevronRight,
   faCog,

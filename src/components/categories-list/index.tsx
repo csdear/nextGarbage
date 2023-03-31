@@ -37,14 +37,15 @@ const CategoriesList: FC = () => {
 
     return (
     <div className={styles["categories-list"]} data-auto="categories-list">
-    {categoryCount > 0 && (
+    {/*NOTE commented the categories header OUT for  the collapso implementation which puts the Explore Categories within  the Collapso Header instead... prevents duplication but you, Future Stuarts needs may vary.  */}
+    {/* {categoryCount > 0 && (
         <h2
         className={styles["categories-list__header"]}
         data-auto="catagories-list-header"
         >
         Explore categories
         </h2>
-    )}
+    )} */}
 
     <div className={styles["categories-list__container"]}>
         {categoriesData?.categories.map((category, index) => (

@@ -1,4 +1,4 @@
-import React, { FC, useState, ReactNode } from "react";
+import React, { FC, useState, useRef, useEffect, ReactNode } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faChevronUp,
@@ -17,13 +17,29 @@ interface CollapsoProps {
 
 const Collapso: FC<CollapsoProps> = ({ open, title, children }) => {
     const [isOpen, setIsOpen] = useState(open);
+    const divRef = useRef<HTMLDivElement>(null);
+
 
     const handleFilterOpening = () => {
         setIsOpen((prev) => !prev);
     };
 
+    useEffect(() => {
+        const handleResize = () => {
+            const currentWidth = divRef.current.offsetWidth;
+            currentWidth < 750 ? setIsOpen(false) : setIsOpen(true);
+
+            };
+
+            window.addEventListener('resize', handleResize);
+
+            return () => {
+            window.removeEventListener('resize', handleResize);
+            };
+        }, []);
+
 return (
-    <div className={styles["collapso"]} data-testid={"collapso"}>
+    <div ref={divRef} className={styles["collapso"]} data-testid={"collapso"}>
         <div className={styles["collapso__container"]}>
             <div className={styles["collapso__header"]} data-testid={"collapso-header"}>
                 <h6 className={styles["collapso__header--title"]}>{title}</h6>
