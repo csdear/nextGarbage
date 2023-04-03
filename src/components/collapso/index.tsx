@@ -28,7 +28,6 @@ const Collapso: FC<CollapsoProps> = ({ open, title, children }) => {
         const handleResize = () => {
             const currentWidth = divRef.current.offsetWidth;
             currentWidth < 750 ? setIsOpen(false) : setIsOpen(true);
-
             };
 
             window.addEventListener('resize', handleResize);

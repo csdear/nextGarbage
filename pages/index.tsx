@@ -60,6 +60,7 @@ import AcmeButton from 'src/components/acme-button';
 import Accordion from 'src/components/accordion';
 import CategoriesList from 'src/components/categories-list';
 import Collapso from 'src/components/collapso';
+import WindowResize from 'src/components/window-resize';
 
 type Data = {
   message: string;
@@ -432,7 +433,13 @@ const isError = true;
       </Collapso>
 
       </ContentContainer>
-
+      <hr />
+      <ContentContainer>
+      <h2>react window resize useRef </h2>
+      <hr />
+      <WindowResize />
+    </ContentContainer>
+      <hr />
       {/*  the end */}
     </div>
   );
