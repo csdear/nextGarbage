@@ -1,4 +1,4 @@
-// MOTHER
+// MOTHER |MAIN|
 import { FC, useState, useEffect } from 'react';
 import { InferGetStaticPropsType, GetStaticProps } from "next";
 import Link from 'next/link';
@@ -61,6 +61,8 @@ import Accordion from 'src/components/accordion';
 import CategoriesList from 'src/components/categories-list';
 import Collapso from 'src/components/collapso';
 import WindowResize from 'src/components/window-resize';
+import { useOnlineStatus } from 'src/hooks/useOnlineStatus'
+import { useThingyIdentifier } from 'src/hooks/useThingyIdentifier'
 
 type Data = {
   message: string;
@@ -86,7 +88,69 @@ export const getStaticProps: GetStaticProps<{ swapis: Data }> = async () => {
   };
 };
 
+export function StatusBar() {
+  const isOnline = useOnlineStatus();
 
+  // |THE FOLLOWINNG CODE HAD BEEN REFACTORED LOGIC TO useOnlineStatus() CUSTOM HOOK|
+  // const [isOnline, setIsOnline] = useState(true);
+  // useEffect(() => {
+  //   function handleOnline() {
+  //     setIsOnline(true);
+  //   }
+  //   function handleOffline() {
+  //     setIsOnline(false);
+  //   }
+  //   window.addEventListener('online', handleOnline);
+  //   window.addEventListener('offline', handleOffline);
+  //   return () => {
+  //     window.removeEventListener('online', handleOnline);
+  //     window.removeEventListener('offline', handleOffline);
+  //   };
+  // }, []);
+
+  return <h1>{isOnline ? '✅ Online' : '❌ Disconnected'}</h1>;
+}
+
+// export function SaveButton() {  //CSD: I did this just to demonstate that 'export function' style or 'const arrow function" style are both equivalent.
+// BOTH STYLE ARE "FUNCTIONAL COMPONENTS!""
+  const SaveButton: FC = ({}) => {
+    const isOnline = useOnlineStatus();
+    // |THE FOLLOWINNG CODE HAD BEEN REFACTORED LOGIC TO useOnlineStatus() CUSTOM HOOK|
+    // const [isOnline, setIsOnline] = useState(true);
+    // useEffect(() => {
+    //   function handleOnline() {
+    //     setIsOnline(true);
+    //   }
+    //   function handleOffline() {
+    //     setIsOnline(false);
+    //   }
+    //   window.addEventListener('online', handleOnline);
+    //   window.addEventListener('offline', handleOffline);
+    //   return () => {
+    //     window.removeEventListener('online', handleOnline);
+    //     window.removeEventListener('offline', handleOffline);
+    //   };
+    // }, []);
+
+  function handleSaveClick() {
+    console.log('✅ Progress saved');
+  }
+
+  return (
+    <button disabled={!isOnline} onClick={handleSaveClick}>
+      {isOnline ? 'Save progress' : 'Reconnecting...'}
+    </button>
+  );
+}
+
+const GetThingy: FC = ({}) => {
+  const isThingy = useThingyIdentifier();
+  return <h1>{isThingy ? '✅ Thingy' : '❌ Not a thingy'}</h1>;
+}
+
+
+
+// Start the giant main component.
 const Index: FC = ({
   swapis
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
@@ -125,6 +189,7 @@ const Index: FC = ({
 
 const API_URL = 'https://api.example.com/';
 const isError = true;
+
 
   return (
     <div>
@@ -428,7 +493,7 @@ const isError = true;
 
       <hr />
     <ContentContainer>
-      <Collapso open title={'Explore Categories'}>
+      <Collapso open title={'Explore Categories X'}>
         <CategoriesList />
       </Collapso>
 
@@ -441,7 +506,11 @@ const isError = true;
     </ContentContainer>
       <hr />
       {/*  the end */}
+      <StatusBar />
+      <SaveButton />
+      <GetThingy />
     </div>
+
   );
 };
 
