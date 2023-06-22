@@ -63,6 +63,7 @@ import Collapso from 'src/components/collapso';
 import WindowResize from 'src/components/window-resize';
 import { useOnlineStatus } from 'src/hooks/useOnlineStatus'
 import { useThingyIdentifier } from 'src/hooks/useThingyIdentifier'
+import Form from 'src/components/form';
 
 type Data = {
   message: string;
@@ -509,6 +510,7 @@ const isError = true;
       <StatusBar />
       <SaveButton />
       <GetThingy />
+      <Form firstName='' lastName=''/>
     </div>
 
   );
